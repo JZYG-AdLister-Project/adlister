@@ -19,6 +19,7 @@ public class AdsSearchServlet extends HttpServlet {
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String search = request.getParameter("search");
+        request.setAttribute("search", search);
         request.getRequestDispatcher("/WEB-INF/ads/search.jsp").forward(request, response);
     }
 
