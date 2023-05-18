@@ -53,8 +53,7 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    @Override
-    public List<Ad> searchAds() {
+    public List<Ad> searchAds(String search) {
         try {
             String insertQuery = "SELECT * FROM ads WHERE title LIKE ?";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
