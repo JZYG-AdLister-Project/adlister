@@ -4,9 +4,6 @@ import com.codeup.adlister.models.Ad;
 import com.mysql.cj.jdbc.Driver;
 import config.Config;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +53,19 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public List<Ad> searchAds() {
+        try {
+            String insertQuery = "SELECT * FROM ads WHERE title LIKE ?";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, "%" + search + "%");
+            ResultSet resultSet = stmt.executeQuery();
+            return createAdsFromResults(resultSet);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error searching for ad(s).", e);
+        }
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
             rs.getLong("id"),
@@ -72,4 +82,5 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
 }
