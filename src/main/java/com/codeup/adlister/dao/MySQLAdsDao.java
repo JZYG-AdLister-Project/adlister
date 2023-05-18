@@ -94,12 +94,24 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    public List<Ad> searchAds(String search) {
+        try {
+            String insertQuery = "SELECT * FROM ads WHERE title LIKE ?";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, "%" + search + "%");
+            ResultSet resultSet = stmt.executeQuery();
+            return createAdsFromResults(resultSet);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error searching for ad(s).", e);
+        }
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
-                rs.getLong("id"),
-                rs.getLong("user_id"),
-                rs.getString("title"),
-                rs.getString("description")
+            rs.getLong("id"),
+            rs.getLong("user_id"),
+            rs.getString("title"),
+            rs.getString("description")
         );
     }
 
@@ -124,7 +136,5 @@ public class MySQLAdsDao implements Ads {
          }
      } catch (SQLException e) {
          throw new RuntimeException("Error retrieving ad by ID.", e);
-
-
      }
  }}
