@@ -21,10 +21,10 @@
         <button type="submit">Search</button>
     </form>
 
-    <c:forEach var="search" items="${search}">
+    <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
-            <h2>${search.title}</h2>
-            <p>${search.description}</p>
+            <h2>${ad.title}</h2>
+            <p>${ad.description}</p>
         </div>
     </c:forEach>
 </div>
