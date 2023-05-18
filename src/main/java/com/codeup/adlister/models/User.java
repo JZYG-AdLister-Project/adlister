@@ -14,6 +14,15 @@ public class User {
         this.password = password;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", id='" + id + '\'' +
+                '}';
+    }
+
     public User(long id, String username, String email, String password) {
         this.id = id;
         this.username = username;
