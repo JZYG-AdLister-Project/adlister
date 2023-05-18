@@ -112,18 +112,19 @@ public class MySQLAdsDao implements Ads {
     }
 
  public Ad findById(long id) {
-        PreparedStatement stmt = null;
-        try {
-            stmt = connection.prepareStatement("SELECT * FROM ads WHERE id = ?");
-            stmt.setLong(1, id);
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                return extractAd(rs);
-            } else {
-                return null;
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException("Error retrieving ad by ID.", e);
+     PreparedStatement stmt = null;
+     try {
+         stmt = connection.prepareStatement("SELECT * FROM ads WHERE id = ?");
+         stmt.setLong(1, id);
+         ResultSet rs = stmt.executeQuery();
+         if (rs.next()) {
+             return extractAd(rs);
+         } else {
+             return null;
+         }
+     } catch (SQLException e) {
+         throw new RuntimeException("Error retrieving ad by ID.", e);
 
 
-}
+     }
+ }}
