@@ -7,12 +7,10 @@
 <h1>Ad Details</h1>
 <table>
     <tr>
-        <th>ID</th>
         <th>Title</th>
         <th>Description</th>
     </tr>
     <tr>
-        <td>${ad.id}</td>
         <td>${ad.title}</td>
         <td>${ad.description}</td>
     </tr>
