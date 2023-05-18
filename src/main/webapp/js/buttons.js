@@ -12,21 +12,23 @@
 	});
 
 	const editButton = () => {
-		const editTitle = event.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling;
+		const editTitleLabel = event.target.parentElement.previousElementSibling.children[0];
+		const editTitle = event.target.parentElement.previousElementSibling.children[1];
+		const editDescriptionLabel = event.target.parentElement.previousElementSibling.children[2];
 		const editDescription = event.target.parentElement.previousElementSibling.children[3];
 		const currentTitle = event.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling;
-		console.log(currentTitle)
-		const currentDescription = event.target.parentElement.previousElementSibling.children[0];
-		console.log(currentDescription)
-		const deleteDoneRow = event.target.parentElement.nextElementSibling;
-		console.log(deleteDoneRow)
+		const currentDescription = event.target.parentElement.previousElementSibling.previousElementSibling;
+		const deleteDoneRow = event.target.parentElement.parentElement.nextElementSibling;
+		const editButton = event.target;
 
+		editTitleLabel.classList.toggle('invisible');
 		editTitle.classList.toggle('invisible');
+		editDescriptionLabel.classList.toggle('invisible');
 		editDescription.classList.toggle('invisible');
 		currentTitle.classList.add('invisible');
-		currentDescription.classList.toggle('invisible');
+		currentDescription.classList.add('invisible');
 		deleteDoneRow.classList.toggle('invisible');
-
+		editButton.classList.add('invisible');
 	}
 
 })();
