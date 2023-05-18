@@ -2,6 +2,7 @@ package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
 import com.mysql.cj.jdbc.Driver;
+import config.Config;
 
 import java.io.FileInputStream;
 import java.io.IOException;
