@@ -6,8 +6,6 @@
 	border-radius: 9999px;
 	border: unset;
 	background-color: unset;
-	position: absolute;
 	top: 0;
 	right: 0;
-	cursor: pointer;
 }

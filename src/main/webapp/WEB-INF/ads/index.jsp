@@ -10,7 +10,9 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <div class="container">
+
     <h1>Here Are all the ads!</h1>
+
     <c:if test="${not empty search}">
         <h1>You are searching for <c:out value="${search}"/></h1>
     </c:if>
@@ -18,6 +20,7 @@
         <input type="text" name="search" placeholder="Search">
         <button type="submit">Search</button>
     </form>
+
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
             <h2>${ad.title}</h2>

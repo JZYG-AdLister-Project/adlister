@@ -1,13 +1,25 @@
-# adlister
+# Adlister
+## Table of Contents
+* [Rubric](#rubric)
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Tests](#tests)
+* [Contributors](#contributors)
+* [Credits](#credits)
+* [Languages](#languages)
 
-# Bigfoot AdLister Rubric
+  <br>
+
+## Rubric
+Bigfoot AdLister Rubric
 
 #### Instructions
 
 For each project aspect below, a grade of 0, 0.5, or 1 will be assigned. Each aspect represents 10% of the total possible grade.
 
-- **0** - mostly incomplete or not present 
-- **0.5** - partially completed 
+- **0** - mostly incomplete or not present
+- **0.5** - partially completed
 - **1** - mostly or fully complete
 
 ### Presentation (20%)
@@ -45,3 +57,33 @@ ___ at least one of the following features added:
 ___ project consistently styled and uses some sort of grid-style layout for display
 
 ___ code documented with a README and comments
+## Description
+
+
+
+## Installation
+IDE Intellij
+
+
+
+## Usage
+ NA
+
+## Contributors
+None, contact me by my email or github with any questions or want to contribute
+
+
+## Tests
+NA
+
+
+## Contributors
+https://github.com/Joeab1991 |  https://github.com/yambaO | https://github.com/cowboyjickjack | https://github.com/zionsegovia
+
+
+## Credits
+Joe, Yamba , Gabriella, Zion
+
+
+## Languages
+Java , HTML5, CSS, JavaScript
