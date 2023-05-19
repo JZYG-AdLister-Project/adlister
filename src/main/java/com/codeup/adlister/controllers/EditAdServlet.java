@@ -23,8 +23,10 @@ public class EditAdServlet extends HttpServlet {
 		User loggedInUser = (User) req.getSession().getAttribute("user");
 		Ad ad = new Ad(
 			loggedInUser.getId(),
+			Ad.getUserId(),
 			req.getParameter("title"),
-			req.getParameter("description")
+			req.getParameter("description"),
+			req.getParameter("category")
 		);
 		DaoFactory.getAdsDao().update(ad);
 

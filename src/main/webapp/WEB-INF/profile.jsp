@@ -36,6 +36,8 @@
                                     <input type="text"  placeholder="${ad.title}" id="editTitle" class="invisible edit-title">
                                     <label for="editDescription" class="invisible">Edit Description</label>
                                     <input type="text"  placeholder="${ad.description}" id="editDescription" class="invisible edit-description">
+                                    <label for="editCategory" class="invisible">Edit Category</label>
+                                    <input type="text"  placeholder="${ad.category}" id="editCategory" class="invisible edit-category">
                                     <input type="hidden" name="id" value="${ad.id}">
                                 </form>
                                 <div class="row justify-content-end">
