@@ -8,6 +8,7 @@
     </jsp:include>
 </head>
 <body>
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="page-wrapper">
     <div class="container">
         <div class="row">
@@ -19,7 +20,9 @@
                     <h1>You are searching for <c:out value="${search}"/></h1>
                 </c:if>
                 <form action="/ads/search" method="POST">
-                    <input type="text" name="search" placeholder="Search">
+                    <label>
+                        <input type="text" name="search" placeholder="Search">
+                    </label>
                     <button type="submit">Search</button>
                 </form>
 
@@ -45,6 +48,11 @@
                         <p>${ad.category}</p>
                     </div>
                 </c:forEach>
+
+<%--                Conditional logic saying nothing matches that search :/--%>
+                <c:if test="${empty ads}">
+                    <h3>Sorry! There's no matches for that... :(</h3>
+                </c:if>
 
                 <a href="http://localhost:8080/ads">Go Back</a>
             </div>

@@ -16,10 +16,6 @@
     <c:if test="${not empty search}">
         <h1>You are searching for <c:out value="${search}"/></h1>
     </c:if>
-    <form action="/ads/search" method="POST">
-        <input type="text" name="search" placeholder="Search">
-        <button type="submit">Search</button>
-    </form>
 
     <form action="/ads/search" method="POST">
         <label for="category">Search Categories</label>
