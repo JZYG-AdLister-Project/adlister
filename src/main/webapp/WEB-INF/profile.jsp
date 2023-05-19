@@ -17,10 +17,10 @@
         </ul>
         <h2>Ads you've posted:</h2>
             <div class="container">
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <div class="col ad-cards">
-                        <c:forEach var="ad" items="${ads}">
+                <div class="row row-cols-4 row-cols-md-2 g-4 ad-cards">
                             <!-- Ad CARD START -->
+                    <c:forEach var="ad" items="${ads}">
+                    <div class="col ">
                         <div class="card h-100">
                             <c:if test="${ad == null}">
                             <div class="card-body">
@@ -31,26 +31,27 @@
                             <div class="card-body">
                                 <h2 class="card-title">Title: ${ad.title}</h2>
                                 <p class="card-text">Description: ${ad.description}</p>
-                                <form action="/ads/edit" method="post">
-                                    <label for="editTitle" class="invisible">Edit Title</label>
-                                    <input type="text"  placeholder="${ad.title}" id="editTitle" class="invisible edit-title">
-                                    <label for="editDescription" class="invisible">Edit Description</label>
-                                    <input type="text"  placeholder="${ad.description}" id="editDescription" class="invisible edit-description">
-                                    <input type="hidden" name="id" value="${ad.id}">
+                                <form action="/ads/edit" method="post" class="z-1 position-absolute top-0 right-0">
+                                    <label for="editTitle" class="invisible form-label">Edit Title</label>
+                                    <input name="title" type="text" placeholder="${ad.title}" id="editTitle" class="invisible edit-title form-control">
+                                    <label for="editDescription" class="invisible form-label">Edit Description</label>
+                                    <input name="description" type="text" placeholder="${ad.description}" id="editDescription" class="form-control invisible edit-description">
                                 </form>
-                                <div class="row justify-content-end">
-                                    <button type="button" class="edit"></button>
-                                </div>
+                                <button type="button" id="edit-btn" class="edit z-3 position-absolute"></button>
                             </div>
-                            <div class="card-footer justify-content-between movie-edit visible">
-                                <button type="button" class="deleteAd btn">Delete</button>
-                                <button type="button" class="doneButton btn">Done</button>
+                            <div class="card-body invisible z-2 position-relative">
+                                <button type="button" id="delete-btn" class="deleteAd btn btn-primary position-absolute start-0 top-100">Delete</button>
+                                <button type="button" id="done-btn" class="doneButton btn btn-primary position-absolute end-0 top-100">Done</button>
                             </div>
+                            <form action="/ads/delete" method="post" class="delete-form invisible">
+                                <input type="hidden" name="title" value="${ad.title}">
+                                <input type="hidden" name="description" value="${ad.description}">
+                            </form>
                             </c:if>
                         </div>
-                            <!-- Ad CARD END -->
-                        </c:forEach>
                     </div>
+                    <!-- Ad CARD END -->
+                    </c:forEach>
                 </div>
             </div>
     </div>
