@@ -1,5 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="javax.servlet.http.HttpServletRequest" %>
 
 <nav class="navbar navbar-default">
     <div class="container-fluid">
