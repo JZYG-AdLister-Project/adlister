@@ -17,10 +17,10 @@
         </ul>
         <h2>Ads you've posted:</h2>
             <div class="container">
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <div class="col ad-cards">
-                        <c:forEach var="ad" items="${ads}">
+                <div class="row row-cols-4 row-cols-md-2 g-4 ad-cards">
                             <!-- Ad CARD START -->
+                    <c:forEach var="ad" items="${ads}">
+                    <div class="col ">
                         <div class="card h-100">
                             <c:if test="${ad == null}">
                             <div class="card-body">
@@ -49,9 +49,9 @@
                             </form>
                             </c:if>
                         </div>
-                            <!-- Ad CARD END -->
-                        </c:forEach>
                     </div>
+                    <!-- Ad CARD END -->
+                    </c:forEach>
                 </div>
             </div>
     </div>
