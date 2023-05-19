@@ -6,19 +6,19 @@
 
 	// Event listener for the edit button
 	adCardsParent.addEventListener('click', (event) => {
-		if (event.target.className === ('edit')) {
+		if (event.target.id === 'edit-btn') {
 			editButton();
 		}
 	});
 
 	const editButton = () => {
-		const editTitleLabel = event.target.parentElement.previousElementSibling.children[0];
-		const editTitle = event.target.parentElement.previousElementSibling.children[1];
-		const editDescriptionLabel = event.target.parentElement.previousElementSibling.children[2];
-		const editDescription = event.target.parentElement.previousElementSibling.children[3];
-		const currentTitle = event.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling;
-		const currentDescription = event.target.parentElement.previousElementSibling.previousElementSibling;
-		const deleteDoneRow = event.target.parentElement.parentElement.nextElementSibling;
+		const editTitleLabel = event.target.previousElementSibling.children[0];
+		const editTitle = event.target.previousElementSibling.children[1];
+		const editDescriptionLabel = event.target.previousElementSibling.children[2];
+		const editDescription = event.target.previousElementSibling.children[3];
+		const currentTitle = event.target.previousElementSibling.previousElementSibling.previousElementSibling;
+		const currentDescription = event.target.previousElementSibling.previousElementSibling;
+		const deleteDoneRow = event.target.parentElement.nextElementSibling;
 		const editButton = event.target;
 
 		editTitleLabel.classList.toggle('invisible');

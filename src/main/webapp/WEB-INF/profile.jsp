@@ -31,20 +31,18 @@
                             <div class="card-body">
                                 <h2 class="card-title">Title: ${ad.title}</h2>
                                 <p class="card-text">Description: ${ad.description}</p>
-                                <form action="/ads/edit" method="post" class="">
-                                    <label for="editTitle" class="invisible">Edit Title</label>
-                                    <input name="title" type="text" placeholder="${ad.title}" id="editTitle" class="invisible edit-title">
-                                    <label for="editDescription" class="invisible">Edit Description</label>
-                                    <input name="description" type="text" placeholder="${ad.description}" id="editDescription" class="invisible edit-description">
+                                <form action="/ads/edit" method="post" class="z-1 position-absolute top-0 right-0">
+                                    <label for="editTitle" class="invisible form-label">Edit Title</label>
+                                    <input name="title" type="text" placeholder="${ad.title}" id="editTitle" class="invisible edit-title form-control">
+                                    <label for="editDescription" class="invisible form-label">Edit Description</label>
+                                    <input name="description" type="text" placeholder="${ad.description}" id="editDescription" class="form-control invisible edit-description">
                                     <input type="hidden" name="id" value="${ad.id}">
                                 </form>
-                                <div class="row justify-content-end">
-                                    <button type="button" class="edit"></button>
-                                </div>
+                                <button type="button" id="edit-btn" class="edit z-3 position-absolute"></button>
                             </div>
-                            <div class="card-footer justify-content-between invisible z-2 position-absolute">
-                                <button type="button" class="deleteAd btn">Delete</button>
-                                <button type="button" class="doneButton btn">Done</button>
+                            <div class="card-body invisible z-2 position-relative">
+                                <button type="button" class="deleteAd btn btn-primary position-absolute start-0 top-100">Delete</button>
+                                <button type="button" class="doneButton btn btn-primary position-absolute end-0 top-100">Done</button>
                             </div>
                             </c:if>
                         </div>
