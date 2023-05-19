@@ -82,6 +82,11 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
+    public List<Ad> searchAds(String search) {
+        return null;
+    }
+
+    @Override
 
     public void update(Ad ad) {
         try {
