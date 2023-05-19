@@ -33,9 +33,12 @@
                                 <p class="card-text">${ad.description}</p>
                                 <form action="/ads/edit" method="post" class="z-1 position-absolute top-0 right-0 update-form">
                                     <label for="editTitle" class="invisible form-label">Edit Title</label>
-                                    <input name="title" type="text" placeholder="${ad.title}" id="editTitle" class="invisible edit-title form-control">
+                                    <input type="text"  placeholder="${ad.title}" id="editTitle" class="form-control invisible edit-title">
                                     <label for="editDescription" class="invisible form-label">Edit Description</label>
-                                    <input name="description" type="text" placeholder="${ad.description}" id="editDescription" class="form-control invisible edit-description">
+                                    <input type="text"  placeholder="${ad.description}" id="editDescription" class="form-control invisible edit-description">
+                                    <label for="editCategory" class="invisible form-label">Edit Category</label>
+                                    <input name="category" type="text"  placeholder="${ad.category}" id="editCategory" class="form-control invisible edit-category">
+                                    <input type="hidden" name="id" value="${ad.id}">
                                 </form>
                                 <button type="button" id="edit-btn" class="edit z-3 position-absolute"></button>
                             </div>
