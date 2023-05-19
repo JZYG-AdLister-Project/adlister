@@ -29,6 +29,8 @@
                         <p>${ad.description}</p>
                     </div>
                 </c:forEach>
+
+                <a href="http://localhost:8080/ads">Go Back</a>
             </div>
         </div>
     </div>
