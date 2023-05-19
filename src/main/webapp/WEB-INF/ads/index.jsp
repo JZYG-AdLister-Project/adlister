@@ -16,8 +16,20 @@
     <c:if test="${not empty search}">
         <h1>You are searching for <c:out value="${search}"/></h1>
     </c:if>
+
     <form action="/ads/search" method="POST">
-        <input type="text" name="search" placeholder="Search">
+        <label for="category">Search Categories</label>
+        <select name="category" id="category">
+            <option value="">All Categories</option>
+            <option value="furniture">Furniture</option>
+            <option value="collectables">Collectables</option>
+            <option value="toys">Toys</option>
+            <option value="jewelry">Jewelry</option>
+            <option value="souvenirs">Souvenirs</option>
+            <option value="itemsWanted">Items Wanted</option>
+            <option value="services">Services</option>
+            <option value="miscellaneous">Miscellaneous</option>
+        </select>
         <button type="submit">Search</button>
     </form>
 
@@ -25,9 +37,11 @@
         <div class="col-md-6">
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
+            <p>${ad.category}</p>
             <a href="ads/details?id=${ad.id}">View Details</a>
         </div>
     </c:forEach>
+
 </div>
 </body>
 </html>
