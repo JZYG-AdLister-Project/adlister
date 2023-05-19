@@ -36,6 +36,7 @@
                                     <input name="title" type="text" placeholder="${ad.title}" id="editTitle" class="invisible edit-title form-control">
                                     <label for="editDescription" class="invisible form-label">Edit Description</label>
                                     <input name="description" type="text" placeholder="${ad.description}" id="editDescription" class="form-control invisible edit-description">
+                                    <input type="hidden" name="id" value="${ad.id}">
                                 </form>
                                 <button type="button" id="edit-btn" class="edit z-3 position-absolute"></button>
                             </div>

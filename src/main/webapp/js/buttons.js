@@ -3,8 +3,6 @@
 //Arrow IIFE
 (() => {
 	const adCardsParent = document.querySelector('.ad-cards');
-	const deleteForm = document.querySelector('.delete-form');
-	const updateForm = document.querySelector('.update-form');
 
 	// Event listener for the edit button
 	adCardsParent.addEventListener('click', (event) => {
@@ -53,6 +51,7 @@
 		const currentDescription = event.target.parentElement.previousElementSibling.children[1];
 		const deleteDoneRow = event.target.parentElement;
 		const editButton = event.target.parentElement.previousElementSibling.children[3];
+		const updateForm = event.target.parentElement.previousElementSibling.children[2];
 
 		editTitleLabel.classList.toggle('invisible');
 		editTitle.classList.toggle('invisible');
@@ -66,14 +65,17 @@
 		if (editTitle.value === '') {
 			editTitle.value = currentTitle.textContent;
 		}
+
 		if (editDescription.value === '') {
 			editDescription.value = currentDescription.textContent;
 		}
+
 		updateForm.submit();
 
 	}
 
 	const deleteButton = () => {
+		const deleteForm = event.target.parentElement.nextElementSibling;
 		deleteForm.submit();
 	}
 
