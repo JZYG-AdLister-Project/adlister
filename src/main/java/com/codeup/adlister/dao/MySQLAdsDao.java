@@ -126,7 +126,7 @@ public class MySQLAdsDao implements Ads {
         return ads;
     }
 
-}
+
 
  public Ad findById(long id) {
      PreparedStatement stmt = null;

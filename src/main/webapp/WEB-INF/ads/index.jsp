@@ -20,14 +20,17 @@
         <input type="text" name="search" placeholder="Search">
         <button type="submit">Search</button>
     </form>
+    <div class="container text-center">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+            <c:forEach var="ad" items="${ads}">
+            <div class="col">
+                <h2>${ad.title}</h2>
+                <p>${ad.description}</p>
+                <a href="ads/details?id=${ad.id}">View Details</a>
+            </div>
+          </c:forEach>
 
-    <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
-            <a href="ads/details?id=${ad.id}">View Details</a>
         </div>
-    </c:forEach>
-</div>
+    </div>
 </body>
 </html>

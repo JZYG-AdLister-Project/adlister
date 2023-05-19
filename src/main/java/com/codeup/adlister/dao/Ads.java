@@ -14,7 +14,7 @@ public interface Ads {
     Long insert(Ad ad);
 
     List<Ad> searchAds(String search);
-}
+
 
     // update an existing ad
     void update(Ad ad);
