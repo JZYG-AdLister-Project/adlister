@@ -9,6 +9,7 @@
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+
     <div class="container">
         <h1 class="text-center">Please Log In</h1>
         <form action="/login" method="POST">

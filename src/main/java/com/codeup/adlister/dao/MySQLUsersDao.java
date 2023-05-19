@@ -13,12 +13,27 @@ public class MySQLUsersDao implements Users {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                config.getUrl(),
-                config.getUser(),
-                config.getPassword()
+                Config.getUrl(),
+                Config.getUser(),
+                Config.getPassword()
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
+        }
+    }
+
+    @Override
+    public void update(User user) {
+        try {
+            String updateQuery = "UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?";
+            PreparedStatement stmt = connection.prepareStatement(updateQuery);
+            stmt.setString(1, user.getUsername());
+            stmt.setString(2, user.getEmail());
+            stmt.setString(3, user.getPassword());
+            stmt.setLong(4, user.getId());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error updating the user.", e);
         }
     }
 

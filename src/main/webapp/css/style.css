@@ -1,0 +1,13 @@
+.edit {
+	background-image: url("../img/edit-symbol.svg");
+	background-size: cover;
+	width: 30px;
+	height: 30px;
+	border-radius: 9999px;
+	border: unset;
+	background-color: unset;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
