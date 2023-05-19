@@ -21,6 +21,7 @@ public class MySQLUsersDao implements Users {
             throw new RuntimeException("Error connecting to the database!", e);
         }
     }
+
     @Override
     public void update(User user) {
         try {
