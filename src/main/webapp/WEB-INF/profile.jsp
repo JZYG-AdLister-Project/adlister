@@ -33,16 +33,16 @@
                                 <p class="card-text">Description: ${ad.description}</p>
                                 <form action="/ads/edit" method="post">
                                     <label for="editTitle" class="invisible">Edit Title</label>
-                                    <input type="text" placeholder="${ad.title}" id="editTitle" class="invisible edit-title">
+                                    <input type="text"  placeholder="${ad.title}" id="editTitle" class="invisible edit-title">
                                     <label for="editDescription" class="invisible">Edit Description</label>
-                                    <input type="text" placeholder="${ad.description}" id="editDescription" class="invisible edit-description">
+                                    <input type="text"  placeholder="${ad.description}" id="editDescription" class="invisible edit-description">
                                     <input type="hidden" name="id" value="${ad.id}">
                                 </form>
                                 <div class="row justify-content-end">
                                     <button type="button" class="edit"></button>
                                 </div>
                             </div>
-                            <div class="card-footer justify-content-between movie-edit invisible">
+                            <div class="card-footer justify-content-between movie-edit visible">
                                 <button type="button" class="deleteAd btn">Delete</button>
                                 <button type="button" class="doneButton btn">Done</button>
                             </div>
