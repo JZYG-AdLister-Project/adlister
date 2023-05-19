@@ -15,6 +15,16 @@ public class Ad {
         this.category = category;
     }
 
+    @Override
+    public String toString() {
+        return "Ad{" +
+                "user id='" + userId + '\'' +
+                ", id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", desc='" + description + '\'' +
+                '}';
+    }
+
     public long getId() {
         return id;
     }
