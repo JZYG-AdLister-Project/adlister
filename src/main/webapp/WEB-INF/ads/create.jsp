@@ -18,17 +18,16 @@
                 <textarea id="description" name="description" class="form-control" type="text"></textarea>
             </div>
             <div class="form-group">
-                <label for="category">Category</label>
-                <select name="category" id="category">
-                    <option value="furniture">Furniture</option>
-                    <option value="collectables">Collectables</option>
-                    <option value="toys">Toys</option>
-                    <option value="jewelry">Jewelry</option>
-                    <option value="souvenirs">Souvenirs</option>
-                    <option value="itemsWanted">Items Wanted</option>
-                    <option value="services">Services</option>
-                    <option value="miscellaneous">Miscellaneous</option>
-                </select>
+                <label>Please Select a Category:</label>
+                <br>
+                <label><input type="checkbox" name="category" value="Furniture">Furniture</label>
+                <label><input type="checkbox" name="category" value="Collectables">Collectables</label>
+                <label><input type="checkbox" name="category" value="Toys">Toys</label>
+                <label><input type="checkbox" name="category" value="Items wanted">Items Wanted</label>
+                <label><input type="checkbox" name="category" value="Miscellaneous">Miscellaneous</label>
+                <label><input type="checkbox" name="category" value="Souvenirs">Souvenirs</label>
+                <label><input type="checkbox" name="category" value="Jewelry">Jewelry</label>
+                <label><input type="checkbox" name="category" value="Services">Services</label>
             </div>
             <input type="submit" class="btn btn-block btn-primary">
             <br>
