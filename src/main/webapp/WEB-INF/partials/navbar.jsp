@@ -6,11 +6,13 @@
             <a class="navbar-brand" href="/ads/create">Post an ad!</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/login">Login</a></li>
+
+
             <c:if test="${!empty user}">
                 <li class="logout-tab visible "><a href="/logout">Logout</a></li>
             </c:if>
             <c:if test="${empty user}">
+                <li class="login-tab "><a href="/login">Login</a></li>
                 <li class="register-tab"><a href="/register">Register</a></li>
             </c:if>
 
