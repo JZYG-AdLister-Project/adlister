@@ -23,15 +23,18 @@ public class EditAdServlet extends HttpServlet {
 		User loggedInUser = (User) req.getSession().getAttribute("user");
 		String title = req.getParameter("title");
 		String description = req.getParameter("description");
+		String id = req.getParameter("id");
+		System.out.println("id=" + req.getParameter("id"));
 		String category = req.getParameter("category");
 
 		Ad ad = new Ad(
+			Long.parseLong(id),
 			loggedInUser.getId(),
-			Ad.getUserId(),
 			title,
 			description,
 			category
 		);
+
 		DaoFactory.getAdsDao().update(ad);
 
 		resp.sendRedirect("/profile");
