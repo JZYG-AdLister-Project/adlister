@@ -7,6 +7,10 @@ public class DaoFactory {
     private static Users usersDao;
     private static final Config config = new Config();
 
+    public DaoFactory(String search) {
+
+    }
+
     public static Ads getAdsDao() {
         if (adsDao == null) {
             adsDao = new MySQLAdsDao(config);
