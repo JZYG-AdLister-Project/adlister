@@ -73,7 +73,7 @@ public class MySQLAdsDao implements Ads {
             String insertQuery = "SELECT * FROM ads WHERE title LIKE ? OR category LIKE ?";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, "%" + search + "%");
-            stmt.setString(2, "%" + search + "%");
+            stmt.setString(2, "%" + category + "%");
             ResultSet resultSet = stmt.executeQuery();
             return createAdsFromResults(resultSet);
         } catch (SQLException e) {
