@@ -13,7 +13,7 @@ public interface Ads {
     // insert a new ad and return the new ad's id
     Long insert(Ad ad);
 
-    List<Ad> searchAds(String search);
+    List<Ad> searchAds(String search, String category);
 
 
     // update an existing ad

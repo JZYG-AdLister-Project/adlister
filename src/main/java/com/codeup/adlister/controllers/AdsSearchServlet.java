@@ -20,10 +20,13 @@ public class AdsSearchServlet extends HttpServlet {
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String search = request.getParameter("search");
-        List<Ad> ads = DaoFactory.getAdsDao().searchAds(search);
+        String category = request.getParameter("category");
+        List<Ad> ads = DaoFactory.getAdsDao().searchAds(search, category);
         request.setAttribute("ads", ads);
         request.setAttribute("search", search);
+        request.setAttribute("category", category);
         request.getRequestDispatcher("/WEB-INF/ads/search.jsp").forward(request, response);
+        System.out.println("Category: " + category);
     }
 
 }

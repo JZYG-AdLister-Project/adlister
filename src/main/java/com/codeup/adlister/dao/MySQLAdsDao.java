@@ -67,7 +67,7 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    public List<Ad> searchAds(String search) {
+    public List<Ad> searchAds(String search, String category) {
         try {
             // refactor to where it searches the title and description
             String insertQuery = "SELECT * FROM ads WHERE title LIKE ? OR category LIKE ?";
