@@ -32,16 +32,21 @@
         </select>
         <button type="submit">Search</button>
     </form>
-
-    <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
-            <p>${ad.category}</p>
-            <a href="ads/details?id=${ad.id}">View Details</a>
+    <div class="container text-center">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 ">
+            <c:forEach var="ad" items="${ads}">
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>${ad.title}</h5>
+                        <p class="card-text text-nowrap overflow-hidden text-truncate">${ad.description}</p>
+                        <p>${ad.category}</p>
+                        <a href="ads/details?id=${ad.id}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+          </c:forEach>
         </div>
-    </c:forEach>
-
-</div>
+    </div>
 </body>
 </html>

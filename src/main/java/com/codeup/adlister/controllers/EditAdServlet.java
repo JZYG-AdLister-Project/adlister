@@ -32,7 +32,7 @@ public class EditAdServlet extends HttpServlet {
 			Long.parseLong(id),
 			loggedInUser.getId(),
 			title,
-			description
+			description,
       req.getParameter("category")
 		);
 

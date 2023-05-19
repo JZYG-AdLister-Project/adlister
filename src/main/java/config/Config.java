@@ -11,7 +11,7 @@ public class Config {
     }
 
     public static String getPassword(){
-        return "";
+        return "12345";
     }
 
 }
