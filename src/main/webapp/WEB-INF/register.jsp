@@ -1,14 +1,18 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+
     <jsp:include page="partials/head.jsp">
         <jsp:param name="title" value="Register For Our Site!" />
     </jsp:include>
+
     <script>
+        // JavaScript function to validate the form
         function validateForm() {
-           let password = document.getElementById("password").value;
+            // Get the values of the password and confirm password fields
+            let password = document.getElementById("password").value;
             let confirm_password = document.getElementById("confirm_password").value;
 
+            // Check if the password and confirm password match
             if (password !== confirm_password) {
                 document.getElementById("error-msg").innerText = "Password and confirm password do not match.";
                 return false;
@@ -19,7 +23,9 @@
     </script>
 </head>
 <body>
+
 <jsp:include page="partials/navbar.jsp" />
+
 <div class="container">
     <h1>Please fill in your information.</h1>
     <form action="${pageContext.request.contextPath}/register" method="post" onsubmit="return validateForm();">
@@ -41,13 +47,7 @@
             <small id="error-msg" class="text-danger"></small>
         </div>
         <input type="submit" class="btn btn-primary btn-block">
-        <%
-            if (request.getParameter("password") != null && request.getParameter("confirm_password") != null && !request.getParameter("password").equals(request.getParameter("confirm_password"))) {
-        %>
-        <div class="alert alert-danger mt-3">
-            Password and confirm password do not match.
-        </div>
-        <% } %>
+
     </form>
 </div>
 </body>
