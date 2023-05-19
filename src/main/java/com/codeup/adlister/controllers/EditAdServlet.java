@@ -33,6 +33,7 @@ public class EditAdServlet extends HttpServlet {
 			loggedInUser.getId(),
 			title,
 			description
+      req.getParameter("category")
 		);
 
 		DaoFactory.getAdsDao().update(ad);
