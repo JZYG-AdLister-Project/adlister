@@ -67,6 +67,7 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
     public List<Ad> searchAds(String search, String category) {
         try {
             // refactor to where it searches the title and description
@@ -81,8 +82,22 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    // maybe delete? was yelling at me?
     @Override
+    public List<Ad> searchAds(String search) {
+        try {
+            // refactor to where it searches the title and description
+            String insertQuery = "SELECT * FROM ads WHERE title LIKE ?";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, "%" + search + "%");
+            ResultSet resultSet = stmt.executeQuery();
+            return createAdsFromResults(resultSet);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error searching for ad(s).", e);
+        }
+    }
 
+    @Override
     public void update(Ad ad) {
         try {
             String updateQuery = "UPDATE ads SET title = ?, description = ? WHERE user_id = ?";

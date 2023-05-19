@@ -7,11 +7,11 @@ public class Config {
     }
 
     public static String getUser(){
-        return "adlister_user";
+        return "adlister_admin";
     }
 
     public static String getPassword(){
-        return "";
+        return "12345";
     }
 
 }
