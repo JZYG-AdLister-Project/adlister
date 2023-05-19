@@ -21,10 +21,14 @@ public class EditAdServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		User loggedInUser = (User) req.getSession().getAttribute("user");
+		String title = req.getParameter("title");
+		String description = req.getParameter("description");
+
+
 		Ad ad = new Ad(
 			loggedInUser.getId(),
-			req.getParameter("title"),
-			req.getParameter("description")
+			title,
+			description
 		);
 		DaoFactory.getAdsDao().update(ad);
 
