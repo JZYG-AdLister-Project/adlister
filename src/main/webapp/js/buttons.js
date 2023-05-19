@@ -4,6 +4,7 @@
 (() => {
 	const adCardsParent = document.querySelector('.ad-cards');
 	const deleteForm = document.querySelector('.delete-form');
+	const updateForm = document.querySelector('.update-form');
 
 	// Event listener for the edit button
 	adCardsParent.addEventListener('click', (event) => {
@@ -61,6 +62,15 @@
 		currentDescription.classList.toggle('invisible');
 		deleteDoneRow.classList.toggle('invisible');
 		editButton.classList.toggle('invisible');
+
+		if (editTitle.value === '') {
+			editTitle.value = currentTitle.textContent;
+		}
+		if (editDescription.value === '') {
+			editDescription.value = currentDescription.textContent;
+		}
+		updateForm.submit();
+
 	}
 
 	const deleteButton = () => {

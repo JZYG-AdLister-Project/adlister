@@ -29,9 +29,9 @@
                             </c:if>
                             <c:if test="${ad != null}">
                             <div class="card-body">
-                                <h2 class="card-title">Title: ${ad.title}</h2>
-                                <p class="card-text">Description: ${ad.description}</p>
-                                <form action="/ads/edit" method="post" class="z-1 position-absolute top-0 right-0">
+                                <h2 class="card-title">${ad.title}</h2>
+                                <p class="card-text">${ad.description}</p>
+                                <form action="/ads/edit" method="post" class="z-1 position-absolute top-0 right-0 update-form">
                                     <label for="editTitle" class="invisible form-label">Edit Title</label>
                                     <input name="title" type="text" placeholder="${ad.title}" id="editTitle" class="invisible edit-title form-control">
                                     <label for="editDescription" class="invisible form-label">Edit Description</label>
