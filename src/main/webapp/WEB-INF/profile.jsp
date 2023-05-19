@@ -31,18 +31,18 @@
                             <div class="card-body">
                                 <h2 class="card-title">Title: ${ad.title}</h2>
                                 <p class="card-text">Description: ${ad.description}</p>
-                                <form action="/ads/edit" method="post" class="z-2 position-absolute top-0 start-0">
+                                <form action="/ads/edit" method="post" class="">
                                     <label for="editTitle" class="invisible">Edit Title</label>
-                                    <input type="text" placeholder="${ad.title}" id="editTitle" class="invisible edit-title">
+                                    <input name="title" type="text" placeholder="${ad.title}" id="editTitle" class="invisible edit-title">
                                     <label for="editDescription" class="invisible">Edit Description</label>
-                                    <input type="text" placeholder="${ad.description}" id="editDescription" class="invisible edit-description">
+                                    <input name="description" type="text" placeholder="${ad.description}" id="editDescription" class="invisible edit-description">
                                     <input type="hidden" name="id" value="${ad.id}">
                                 </form>
-                                <div class="row justify-content-end z-3">
+                                <div class="row justify-content-end">
                                     <button type="button" class="edit"></button>
                                 </div>
                             </div>
-                            <div class="card-footer justify-content-between movie-edit invisible z-0 position-absolute">
+                            <div class="card-footer justify-content-between invisible z-2 position-absolute">
                                 <button type="button" class="deleteAd btn">Delete</button>
                                 <button type="button" class="doneButton btn">Done</button>
                             </div>
