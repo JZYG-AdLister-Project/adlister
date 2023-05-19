@@ -27,7 +27,7 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h5>${ad.title}</h5>
-                        <p>${ad.description}</p>
+                        <p class="card-text text-nowrap overflow-hidden text-truncate">${ad.description}</p>
                         <a href="ads/details?id=${ad.id}" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
