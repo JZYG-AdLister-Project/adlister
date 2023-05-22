@@ -68,6 +68,8 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    // for ads_categories table, to update categories
+
     @Override
     public List<Ad> searchAds(String search, String category) {
         try {
@@ -135,7 +137,6 @@ public class MySQLAdsDao implements Ads {
                 rs.getLong("user_id"),
                 rs.getString("title"),
                 rs.getString("description")
-//                rs.getString("category")
         );
     }
 
