@@ -52,12 +52,11 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO ads(user_id, title, description, category) VALUES (?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
             stmt.setString(2, ad.getTitle());
             stmt.setString(3, ad.getDescription());
-            stmt.setString(4, ad.getCategory());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -70,10 +69,9 @@ public class MySQLAdsDao implements Ads {
     public List<Ad> searchAds(String search, String category) {
         try {
             // refactor to where it searches the title and description
-            String insertQuery = "SELECT * FROM ads WHERE title LIKE ? OR category LIKE ?";
+            String insertQuery = "SELECT * FROM ads WHERE title LIKE ?";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, "%" + search + "%");
-            stmt.setString(2, "%" + category + "%");
             ResultSet resultSet = stmt.executeQuery();
             return createAdsFromResults(resultSet);
         } catch (SQLException e) {
