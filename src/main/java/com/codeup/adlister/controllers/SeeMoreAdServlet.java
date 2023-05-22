@@ -14,8 +14,18 @@ import java.io.IOException;
 @WebServlet(name = "controllers.SeeMoreAdServlet", urlPatterns = "/ads/details")
 public class SeeMoreAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Get the ad ID from the request parameter
-        long adId = Long.parseLong(request.getParameter("id"));
+        // Logic for redirecting user if they are not logged in
+        if(request.getSession().getAttribute("user") == null) {
+            request.getSession().setAttribute("ad_id", Long.parseLong(request.getParameter("id")));
+            request.getSession().setAttribute("redirect", "/ads/details");
+            response.sendRedirect("/login");
+            // add a return statement to exit out of the entire method.
+            return;
+        }
+
+    // Get the ad ID from the request parameter
+        long adId = request.getSession().getAttribute("ad_id") == null ? Long.parseLong(request.getParameter("id")) : (long) request.getSession().getAttribute("ad_id");
+
 
         // Retrieve the ad details using the DAO
         Ad ad = DaoFactory.getAdsDao().findById(adId);
