@@ -58,6 +58,9 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+//    @Override
+//    public Long insertCategory()
+
     @Override
     public Long insert(Ad ad) {
         try {
