@@ -24,6 +24,8 @@
                     </form>
                 </div>
                 <li class="logout-tab visible "><a href="/logout">Logout</a></li>
+                <li class="profile-tab visible "><a href="/profile">View Profile</a></li>
+                <li class="update-tab visible "><a href="/account-update">Update Profile</a></li>
             </c:if>
 
             <%-- If NOT logged in: --%>

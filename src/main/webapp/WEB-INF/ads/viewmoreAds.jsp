@@ -2,8 +2,12 @@
 <html>
 <head>
     <title>Ad Details</title>
+    <jsp:include page="/WEB-INF/partials/head.jsp">
+        <jsp:param name="title" value="Your Profile" />
+    </jsp:include>
 </head>
 <body>
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <h1>Ad Details</h1>
 <table>
     <tr>
