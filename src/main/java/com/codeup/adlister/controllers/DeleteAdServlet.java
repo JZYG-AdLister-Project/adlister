@@ -24,7 +24,8 @@ public class DeleteAdServlet extends HttpServlet {
 		Ad ad = new Ad(
 				loggedInUser.getId(),
 				req.getParameter("title"),
-				req.getParameter("description")
+				req.getParameter("description"),
+				req.getParameter("category")
 		);
 		DaoFactory.getAdsDao().delete(ad);
 
