@@ -7,10 +7,12 @@
 <h1>Ad Details</h1>
 <table>
     <tr>
+        <th>Username</th>
         <th>Title</th>
         <th>Description</th>
     </tr>
     <tr>
+        <td>${user.username}</td>
         <td>${ad.title}</td>
         <td>${ad.description}</td>
     </tr>
