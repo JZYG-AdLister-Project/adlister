@@ -4,8 +4,12 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/ads">Adlister</a>
-            <a class="navbar-brand" href="/ads/create">Post an ad!</a>
+            <a class="navbar-brand" href="/ads">
+                <img src="/img/heirloom.png" alt="Bootstrap" width="75" height="75">
+            </a>
+            <a class="navbar-brand" href="/ads/create">Post an heirloom!</a>
+
+
         </div>
 
         <%-- If logged in search bar visible: --%>
@@ -27,7 +31,7 @@
         <ul class="nav navbar-nav  justify-content-right">
             <%-- If logged in: --%>
                 <c:if test="${!empty user }">
-                <li class="logout-tab visible "><a href="/logout">Logout</a></li>
+                <li class="logout-tab visible "><a href="/log out">Logout</a></li>
                 <li class="profile-tab visible "><a href="/profile">View Profile</a></li>
                 <li class="update-tab visible "><a href="/account-update">Update Profile</a></li>
             </c:if>

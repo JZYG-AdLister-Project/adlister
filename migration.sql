@@ -37,11 +37,11 @@ INSERT INTO users (username, email, password) VALUES
                                                   ('joeab91','jab102191@gmail.com','$2a$12$XMaLwx14AAjGw7IIVowiD.9n//tnvdYLLN8gvL9Gd2jCFi7ijQBr2.');
 INSERT INTO ads (user_id, title, description)
 VALUES
-    (1, 'Vintage Armchair', 'Beautiful vintage armchair in excellent condition.'),
-    (2, 'Antique Silver Spoon', 'Rare antique silver spoon from the 1800s.'),
-    (3, 'Limited Edition Star Wars Poster', 'Collectible limited edition Star Wars poster.'),
-    (4, 'Vintage Vinyl Records Collection', 'A collection of vintage vinyl records in great condition.'),
-    (5, 'Assorted Kitchen Appliances', 'Various kitchen appliances including blender, toaster, and more.'),
+    (1, 'Vintage Armchair', 'This vintage armchair has been a cherished family heirloom, passed down through generations. It holds a special place in our home, symbolizing comfort, nostalgia, and the stories shared by our loved ones.'),
+    (2, 'Antique Silver Spoon', 'This antique silver spoon from the 1800s carries a rich family history. It represents our ancestors\' culinary traditions and serves as a reminder of the connections between generations.'),
+    (3, 'Limited Edition Star Wars Poster', 'This limited edition Star Wars poster is a cherished family possession. It brings back memories of watching the movies together and ignites our passion for the epic saga.'),
+    (4, 'Vintage Vinyl Records Collection', 'This collection of vintage vinyl records is a treasure trove of music and memories. Each record carries the soundtracks of special moments and the nostalgia of bygone eras.'),
+    (5, 'Assorted Kitchen Appliances', 'These kitchen appliances are more than just functional tools. They are heirlooms that have seen countless family meals and celebrations, making them a meaningful part of our family history.'),
     (1, 'Texas Lone Star Flag', 'Authentic Texas Lone Star flag from the Alamo.'),
     (2, 'Sapphire Pendant Necklace', 'Elegant sapphire pendant necklace, perfect for special occasions.'),
     (3, 'Gardening Services', 'Professional gardening services for all your landscaping needs.'),
@@ -57,6 +57,7 @@ VALUES
     (3, 'Vintage Film Cameras', 'Rare vintage film cameras for photography enthusiasts.'),
     (4, 'Star Wars Collectibles Lot', 'Assorted Star Wars collectibles, including action figures and memorabilia.'),
     (5, 'Vinyl Record Player', 'High-quality vinyl record player with built-in speakers and Bluetooth connectivity.');
+
 INSERT INTO categories (name) VALUES
                                   ('Furniture'),
                                   ('Collectables'),
