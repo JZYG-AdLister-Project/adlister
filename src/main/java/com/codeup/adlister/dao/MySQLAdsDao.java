@@ -93,7 +93,6 @@ public class MySQLAdsDao implements Ads {
     @Override
     public List<Ad> searchAds(String search) {
         try {
-            // refactor to where it searches the title and description
             String insertQuery = "SELECT ads.id, ads.user_id, ads.title, ads.description, GROUP_CONCAT(c.name SEPARATOR ', ') AS category\n" +
                     "FROM ads\n" +
                     "    JOIN ads_categories ac on ads.id = ac.ad_id\n" +
