@@ -19,7 +19,6 @@ public class ViewProfileServlet extends HttpServlet {
             response.sendRedirect("/login");
             return;
         }
-
         request.setAttribute("ads", DaoFactory.getAdsDao().allFromUser(user.getId()));
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
