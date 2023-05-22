@@ -69,9 +69,6 @@ IDE Intellij
 ## Usage
  NA
 
-## Contributors
-None, contact me by my email or github with any questions or want to contribute
-
 
 ## Tests
 NA
