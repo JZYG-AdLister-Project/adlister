@@ -56,7 +56,8 @@ VALUES
     (2, 'Solid Oak Coffee Table', 'Beautiful solid oak coffee table with a modern design.'),
     (3, 'Vintage Film Cameras', 'Rare vintage film cameras for photography enthusiasts.'),
     (4, 'Star Wars Collectibles Lot', 'Assorted Star Wars collectibles, including action figures and memorabilia.'),
-    (5, 'Vinyl Record Player', 'High-quality vinyl record player with built-in speakers and Bluetooth connectivity.');INSERT INTO categories (name) VALUES
+    (5, 'Vinyl Record Player', 'High-quality vinyl record player with built-in speakers and Bluetooth connectivity.');
+INSERT INTO categories (name) VALUES
                                   ('Furniture'),
                                   ('Collectables'),
                                   ('Toys'),

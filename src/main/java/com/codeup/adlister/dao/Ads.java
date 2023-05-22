@@ -13,8 +13,8 @@ public interface Ads {
     // insert a new ad and return the new ad's id
     Long insert(Ad ad);
 
-    // Search by ad and catagory
-    List<Ad> searchAds(String search, String category);
+    // Search by ad and category
+    List<Ad> searchAdsCategory(String category);
 
     // Search by ad
     List<Ad> searchAds(String search);
