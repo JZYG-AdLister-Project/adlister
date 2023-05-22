@@ -44,7 +44,12 @@ public class MySQLAdsDao implements Ads {
     public List<Ad> allFromUser(long userId) {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads WHERE user_id = ?");
+            stmt = connection.prepareStatement("SELECT ads.id, ads.user_id, ads.title, ads.description, GROUP_CONCAT(c.name SEPARATOR ', ') AS category\n" +
+                    "FROM ads\n" +
+                    "         JOIN ads_categories ac ON ads.id = ac.ad_id\n" +
+                    "         JOIN categories c ON ac.category_id = c.id\n" +
+                    "WHERE ads.user_id = ?\n" +
+                    "GROUP BY ads.id;");
             stmt.setLong(1, userId);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
