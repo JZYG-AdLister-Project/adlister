@@ -28,7 +28,11 @@ public class MySQLAdsDao implements Ads {
     public List<Ad> all() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads");
+            stmt = connection.prepareStatement("SELECT ads.id, ads.user_id, ads.title, ads.description, GROUP_CONCAT(c.name SEPARATOR ', ') AS category\n" +
+                    "FROM ads\n" +
+                    "    JOIN ads_categories ac on ads.id = ac.ad_id\n" +
+                    "    JOIN categories c on ac.category_id = c.id\n" +
+                    "GROUP BY ads.id;");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -58,7 +62,6 @@ public class MySQLAdsDao implements Ads {
             stmt.setLong(1, ad.getUserId());
             stmt.setString(2, ad.getTitle());
             stmt.setString(3, ad.getDescription());
-//            stmt.setString(4, ad.getCategory());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -68,16 +71,18 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    // for ads_categories table, to update categories
     @Override
-    public List<Ad> searchAds(String search, String category) {
+    public List<Ad> searchAdsCategory(String category) {
         try {
-            // refactor to where it searches the title and description
-            // removed category after first query
-            // before: LIKE ? OR category LIKE ?
-            String insertQuery = "SELECT * FROM ads WHERE title LIKE ?";
+            String insertQuery = "SELECT ads.id, ads.user_id, ads.title, ads.description, GROUP_CONCAT(c.name SEPARATOR ', ') AS category\n" +
+                    "FROM ads\n" +
+                    "    JOIN ads_categories ac on ads.id = ac.ad_id\n" +
+                    "    JOIN categories c on ac.category_id = c.id\n" +
+                    "WHERE name LIKE ?\n" +
+                    "GROUP BY ads.id";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
-            stmt.setString(1, "%" + search + "%");
-//            stmt.setString(2, "%" + category + "%");
+            stmt.setString(1, "%" + category + "%");
             ResultSet resultSet = stmt.executeQuery();
             return createAdsFromResults(resultSet);
         } catch (SQLException e) {
@@ -85,12 +90,15 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    // maybe delete? was yelling at me?
     @Override
     public List<Ad> searchAds(String search) {
         try {
-            // refactor to where it searches the title and description
-            String insertQuery = "SELECT * FROM ads WHERE title LIKE ?";
+            String insertQuery = "SELECT ads.id, ads.user_id, ads.title, ads.description, GROUP_CONCAT(c.name SEPARATOR ', ') AS category\n" +
+                    "FROM ads\n" +
+                    "    JOIN ads_categories ac on ads.id = ac.ad_id\n" +
+                    "    JOIN categories c on ac.category_id = c.id\n" +
+                    "WHERE title LIKE ?" +
+                    "GROUP BY ads.id";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, "%" + search + "%");
             ResultSet resultSet = stmt.executeQuery();
@@ -134,8 +142,8 @@ public class MySQLAdsDao implements Ads {
                 rs.getLong("id"),
                 rs.getLong("user_id"),
                 rs.getString("title"),
-                rs.getString("description")
-//                rs.getString("category")
+                rs.getString("description"),
+                rs.getString("category")
         );
     }
 
@@ -150,7 +158,12 @@ public class MySQLAdsDao implements Ads {
     public Ad findById(long id) {
        PreparedStatement stmt = null;
        try {
-           stmt = connection.prepareStatement("SELECT * FROM ads WHERE id = ?");
+           stmt = connection.prepareStatement("SELECT ads.id, ads.user_id, ads.title, ads.description, GROUP_CONCAT(c.name SEPARATOR ', ') AS category\n" +
+                   "FROM ads\n" +
+                   "    JOIN ads_categories ac on ads.id = ac.ad_id\n" +
+                   "    JOIN categories c on ac.category_id = c.id\n" +
+                   "WHERE ads.id = ?\n" +
+                   "GROUP BY ads.id");
            stmt.setLong(1, id);
            ResultSet rs = stmt.executeQuery();
            if (rs.next()) {
