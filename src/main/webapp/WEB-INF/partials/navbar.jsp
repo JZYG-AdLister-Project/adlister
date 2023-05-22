@@ -12,19 +12,27 @@
 
         </div>
 
+        <%-- If user on search page, search bar is invisibe --%>
+        <c:if test="${fn:containsIgnoreCase(pageContext.request.requestURI, '/search')}">
+            <form class="d-flex input-group w-auto invisible" action="/ads/search" method="POST">
+                <input type="text" class="form-control" name="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-primary" type="submit" data-mdb-ripple-color="dark">Search</button>
+            </form>
+        </c:if>
+
         <%-- If logged in search bar visible: --%>
-        <c:if test="${!empty user }">
+        <c:if test="${!fn:containsIgnoreCase(pageContext.request.requestURI, '/search') && !empty user }">
             <form class="d-flex input-group w-auto visible" action="/ads/search" method="POST">
-                <input type="search" class="form-control" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-primary" name="search" type="button" data-mdb-ripple-color="dark">Search</button>
+                <input type="text" class="form-control" name="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-primary" type="submit" data-mdb-ripple-color="dark">Search</button>
             </form>
         </c:if>
 
         <%-- If logged in search bar invisible: --%>
-        <c:if test="${empty user }">
-            <form class="d-flex input-group w-auto invisible " action="/ads/search" method="POST">
-                <input type="search" class="form-control" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-primary" name="search" type="button" data-mdb-ripple-color="dark">Search</button>
+        <c:if test="${fn:containsIgnoreCase(pageContext.request.requestURI, '/search') && empty user }">
+            <form class="d-flex input-group w-auto invisible" action="/ads/search" method="POST">
+                <input type="text" class="form-control" name="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-primary" type="submit" data-mdb-ripple-color="dark">Search</button>
             </form>
         </c:if>
 

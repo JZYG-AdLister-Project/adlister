@@ -13,12 +13,16 @@
     <div class="container">
         <div class="row">
             <div class="column">
-                <c:if test="${empty search}">
-                    <h1>Here Are all the ads!</h1>
+                <c:if test="${empty search && empty adsCategory}">
+                    <h1>Here are all the ads!</h1>
                 </c:if>
                 <c:if test="${not empty search}">
-                    <h1>You are searching for <c:out value="${search}"/></h1>
+                    <h1>You are searching for "<c:out value="${search}"/>"</h1>
                 </c:if>
+                <c:if test="${not empty adsCategory}">
+                    <h1>You are searching for "<c:out value="${category}"/>"</h1>
+                </c:if>
+
                 <form action="/ads/search" method="POST">
                     <label>
                         <input type="text" name="search" placeholder="Search">
@@ -27,14 +31,14 @@
                 </form>
 
                 <form action="/ads/search" method="POST">
-                    <label for="category">Search Categories</label>
+                    <label for="category">Filter Categories:</label>
                     <select name="category" id="category">
                         <option value="furniture">Furniture</option>
                         <option value="collectables">Collectables</option>
                         <option value="toys">Toys</option>
                         <option value="jewelry">Jewelry</option>
                         <option value="souvenirs">Souvenirs</option>
-                        <option value="itemsWanted">Items Wanted</option>
+                        <option value="items wanted">Items Wanted</option>
                         <option value="services">Services</option>
                         <option value="miscellaneous">Miscellaneous</option>
                     </select>

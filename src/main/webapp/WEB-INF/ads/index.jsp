@@ -18,7 +18,7 @@
     </c:if>
 
     <form action="/ads/search" method="POST">
-        <label for="category">Search Categories</label>
+        <label for="category">Filter Categories:</label>
         <select name="category" id="category">
             <option value="">All Categories</option>
             <option value="furniture">Furniture</option>
