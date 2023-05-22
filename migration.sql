@@ -1,73 +1,62 @@
 USE adlister_db;
-
 DROP TABLE IF EXISTS ads, ads_categories, users, categories;
-
-
 CREATE TABLE users (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    username VARCHAR(240) NOT NULL,
-    email VARCHAR(240) NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    PRIMARY KEY (id)
+                       id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                       username VARCHAR(240) NOT NULL,
+                       email VARCHAR(240) NOT NULL,
+                       password VARCHAR(255) NOT NULL,
+                       PRIMARY KEY (id)
 );
-
 CREATE TABLE ads (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    user_id INT UNSIGNED NOT NULL,
-    title VARCHAR(240) NOT NULL,
-    description TEXT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
-        ON DELETE CASCADE
+                     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                     user_id INT UNSIGNED NOT NULL,
+                     title VARCHAR(240) NOT NULL,
+                     description TEXT NOT NULL,
+                     PRIMARY KEY (id),
+                     FOREIGN KEY (user_id) REFERENCES users(id)
+                         ON DELETE CASCADE
 );
-
 CREATE TABLE categories (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    name VARCHAR(240) NOT NULL,
-    PRIMARY KEY (id)
+                            id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                            name VARCHAR(240) NOT NULL,
+                            PRIMARY KEY (id)
 );
-
 CREATE TABLE ads_categories (
-    ad_id INT UNSIGNED NOT NULL,
-    category_id INT UNSIGNED NOT NULL,
-    FOREIGN KEY (ad_id) REFERENCES ads(id)
-        ON DELETE CASCADE,
-    FOREIGN KEY (category_id) REFERENCES categories(id)
-        ON DELETE CASCADE
+                                ad_id INT UNSIGNED NOT NULL,
+                                category_id INT UNSIGNED NOT NULL,
+                                FOREIGN KEY (ad_id) REFERENCES ads(id)
+                                    ON DELETE CASCADE,
+                                FOREIGN KEY (category_id) REFERENCES categories(id)
+                                    ON DELETE CASCADE
 );
-
 INSERT INTO users (username, email, password) VALUES
                                                   ('JohnDoe','johndoe@example.com','$2a$12$ydoos7sl0kTVjW8PqNYzeeuImwkZc4pazPl6.TfRdgYPE/ApFhrc.'),
                                                   ('JaneSmith','janesmith@example.com','$2a$12$mmFFq2Sqx3.4NmYPhuHTtuCUNdhxXQjXV//zZoChbPPkhcIWSvHne'),
                                                   ('Mike1','mikejohnson@example.com','$2a$12$el/vWaxEuA8B.9dgSjWc/OjzV9yyHijmQOzKKSRGbRb4DxAJNKXeO'),
                                                   ('bob','test@codeup.com', '$2a$12$4XdLaqVSUl.3OuEq2r15VuaLT4KKxO4hGNVLtnjiy8tWpD.oyuy1e'),
                                                   ('joeab91','jab102191@gmail.com','$2a$12$XMaLwx14AAjGw7IIVowiD.9n//tnvdYLLN8gvL9Gd2jCFi7ijQBr2.');
-
-
-
-INSERT INTO ads (user_id, title, description) VALUES
-                                                  (1, 'Wooden Dining Table', 'Solid wood dining table in excellent condition.'),
-                                                  (2, 'Antique Pocket Watch', 'Rare antique pocket watch from the 1800s.'),
-                                                  (3, 'LEGO Star Wars Set', 'Brand new LEGO Star Wars Millennium Falcon set.'),
-                                                  (4, 'Wanted: Old Vinyl Records', 'Looking to buy old vinyl records in good condition.'),
-                                                  (5, 'Miscellaneous Items Lot', 'Assorted items including kitchenware, tools, and more.'),
-                                                  (1, 'Alamo Souvenir', 'A souvenir from the Alamo in San Antonio, TX.'),
-                                                  (2, 'Diamond Ring', 'Beautiful diamond ring in excellent condition.'),
-                                                  (3, 'Lawn Mowing Service', 'I will mow your lawn for a reasonable price.'),
-                                                  (4, 'Wooden Dining Table', 'Solid wood dining table in excellent condition.'),
-                                                  (5, 'Antique Pocket Watch', 'Rare antique pocket watch from the 1800s.'),
-                                                  (1, 'LEGO Star Wars Set', 'Brand new LEGO Star Wars Millennium Falcon set.'),
-                                                  (2, 'Wanted: Old Vinyl Records', 'Looking to buy old vinyl records in good condition.'),
-                                                  (3, 'Miscellaneous Items Lot', 'Assorted items including kitchenware, tools, and more.'),
-                                                  (4, 'Alamo Souvenir', 'A souvenir from the Alamo in San Antonio, TX.'),
-                                                  (5, 'Diamond Ring', 'Beautiful diamond ring in excellent condition.'),
-                                                  (1, 'Lawn Mowing Service', 'I will mow your lawn for a reasonable price.'),
-                                                  (2, 'Wooden Dining Table', 'Solid wood dining table in excellent condition.'),
-                                                  (3, 'Antique Pocket Watch', 'Rare antique pocket watch from the 1800s.'),
-                                                  (4, 'LEGO Star Wars Set', 'Brand new LEGO Star Wars Millennium Falcon set.'),
-                                                  (5, 'Wanted: Old Vinyl Records', 'Looking to buy old vinyl records in good condition.');
-
-INSERT INTO categories (name) VALUES
+INSERT INTO ads (user_id, title, description)
+VALUES
+    (1, 'Vintage Armchair', 'Beautiful vintage armchair in excellent condition.'),
+    (2, 'Antique Silver Spoon', 'Rare antique silver spoon from the 1800s.'),
+    (3, 'Limited Edition Star Wars Poster', 'Collectible limited edition Star Wars poster.'),
+    (4, 'Vintage Vinyl Records Collection', 'A collection of vintage vinyl records in great condition.'),
+    (5, 'Assorted Kitchen Appliances', 'Various kitchen appliances including blender, toaster, and more.'),
+    (1, 'Texas Lone Star Flag', 'Authentic Texas Lone Star flag from the Alamo.'),
+    (2, 'Sapphire Pendant Necklace', 'Elegant sapphire pendant necklace, perfect for special occasions.'),
+    (3, 'Gardening Services', 'Professional gardening services for all your landscaping needs.'),
+    (4, 'Rustic Farmhouse Table', 'Handcrafted rustic farmhouse dining table, ideal for family gatherings.'),
+    (5, 'Vintage Pocket Watch', 'Exquisite vintage pocket watch from the 1900s.'),
+    (1, 'LEGO Harry Potter Set', 'Brand new LEGO Harry Potter Hogwarts Castle set.'),
+    (2, 'Classic Rock Vinyl Records', 'Looking to buy classic rock vinyl records in good condition.'),
+    (3, 'Assorted Power Tools Set', 'A set of power tools for all your DIY projects.'),
+    (4, 'San Antonio Spurs Memorabilia', 'Memorabilia items from the San Antonio Spurs basketball team.'),
+    (5, 'Emerald Stud Earrings', 'Stunning emerald stud earrings, perfect for gifting.'),
+    (1, 'Landscape Design Consultation', 'Professional landscape design consultation for your outdoor space.'),
+    (2, 'Solid Oak Coffee Table', 'Beautiful solid oak coffee table with a modern design.'),
+    (3, 'Vintage Film Cameras', 'Rare vintage film cameras for photography enthusiasts.'),
+    (4, 'Star Wars Collectibles Lot', 'Assorted Star Wars collectibles, including action figures and memorabilia.'),
+    (5, 'Vinyl Record Player', 'High-quality vinyl record player with built-in speakers and Bluetooth connectivity.');INSERT INTO categories (name) VALUES
                                   ('Furniture'),
                                   ('Collectables'),
                                   ('Toys'),
@@ -76,7 +65,6 @@ INSERT INTO categories (name) VALUES
                                   ('Souvenirs'),
                                   ('Jewelry'),
                                   ('Services');
-
 INSERT INTO ads_categories (ad_id, category_id) VALUES
                                                     (1, 1),
                                                     (2, 2),
@@ -118,5 +106,3 @@ INSERT INTO ads_categories (ad_id, category_id) VALUES
                                                     (18, 3),
                                                     (19, 4),
                                                     (20, 5);
-
-
