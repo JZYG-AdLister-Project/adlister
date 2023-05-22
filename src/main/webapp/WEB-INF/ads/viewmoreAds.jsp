@@ -7,20 +7,11 @@
     </jsp:include>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<h1>Ad Details</h1>
-<table>
-    <tr>
-        <th>Username</th>
-        <th>Title</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td>${user.username}</td>
-        <td>${ad.title}</td>
-        <td>${ad.description}</td>
-        <td>${ad.category}</td>
-    </tr>
-</table>
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<%--<h1>Ad Details</h1>--%>
+  <h2>${ad.title}</h2>
+  <h3 class="fs-4">${ad.category}</h3>
+  <h4 class="fs-6">${ad.description}</h4>
+  <p class="fs-6">posted by: ${user.username}</p>
 </body>
 </html>
