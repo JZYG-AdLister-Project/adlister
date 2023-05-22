@@ -14,6 +14,12 @@ public class Ad {
         this.description = description;
         this.category = category;
     }
+    public Ad(long id, long userId, String title, String description) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+    }
 
     public Ad(long userId, String title, String description, String category) {
         this.userId = userId;

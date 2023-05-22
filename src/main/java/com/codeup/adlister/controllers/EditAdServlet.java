@@ -28,13 +28,13 @@ public class EditAdServlet extends HttpServlet {
 		String id = req.getParameter("id");
 		System.out.println("id=" + req.getParameter("id"));
 		String category = req.getParameter("category");
+		System.out.println("category=" + req.getParameter("category"));
 
 		Ad ad = new Ad(
 			Long.parseLong(id),
 			loggedInUser.getId(),
 			title,
-			description,
-			category
+			description
 		);
 
 		DaoFactory.getAdsDao().update(ad);
