@@ -15,6 +15,7 @@
         <td>${user.username}</td>
         <td>${ad.title}</td>
         <td>${ad.description}</td>
+        <td>${ad.category}</td>
     </tr>
 </table>
 </body>

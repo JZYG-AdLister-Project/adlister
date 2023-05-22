@@ -14,7 +14,7 @@ public interface Ads {
     Long insert(Ad ad);
 
     // Search by ad and category
-    List<Ad> searchAds(String search, String category);
+    List<Ad> searchAdsCategory(String category);
 
     // Search by ad
     List<Ad> searchAds(String search);
