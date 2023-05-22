@@ -21,12 +21,19 @@
                 <label>Please Select a Category:</label>
                 <br>
                 <label><input type="checkbox" name="category" value="Furniture">Furniture</label>
+                <br>
                 <label><input type="checkbox" name="category" value="Collectables">Collectables</label>
+                <br>
                 <label><input type="checkbox" name="category" value="Toys">Toys</label>
+                <br>
                 <label><input type="checkbox" name="category" value="Items wanted">Items Wanted</label>
+                <br>
                 <label><input type="checkbox" name="category" value="Miscellaneous">Miscellaneous</label>
+                <br>
                 <label><input type="checkbox" name="category" value="Souvenirs">Souvenirs</label>
+                <br>
                 <label><input type="checkbox" name="category" value="Jewelry">Jewelry</label>
+                <br>
                 <label><input type="checkbox" name="category" value="Services">Services</label>
             </div>
             <input type="submit" class="btn btn-block btn-primary">

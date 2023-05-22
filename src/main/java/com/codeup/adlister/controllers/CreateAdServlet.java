@@ -37,5 +37,6 @@ public class CreateAdServlet extends HttpServlet {
         );
         DaoFactory.getAdsDao().insert(ad);
         response.sendRedirect("/ads");
+        System.out.println("Category: " + request.getParameter("category"));
     }
 }
