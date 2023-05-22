@@ -110,8 +110,10 @@ INSERT INTO ads_categories (ad_id, category_id) VALUES
                                                     (20, 5);
 
 SELECT ads.id, ads.user_id, ads.title, ads.description, GROUP_CONCAT(c.name SEPARATOR ', ') AS category
-                   FROM ads
-                       JOIN ads_categories ac on ads.id = ac.ad_id
-                       JOIN categories c on ac.category_id = c.id
-                   WHERE ads.id = 1
-                   GROUP BY ads.id;
+       FROM ads
+           JOIN ads_categories ac on ads.id = ac.ad_id
+           JOIN categories c on ac.category_id = c.id
+       WHERE ads.id = 1
+       GROUP BY ads.id;
+
+INSERT INTO ads_categories(ad_id, category_id) VALUES (?, ?);
