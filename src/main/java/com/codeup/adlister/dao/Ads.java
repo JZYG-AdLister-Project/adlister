@@ -10,7 +10,7 @@ public interface Ads {
     // get a list of all ads the user has posted
     List<Ad> allFromUser(long userId);
 
-//    Long insertCategory();
+    void insertCategory(Long addId, String[] categories);
 
     // insert a new ad and return the new ad's id
     Long insert(Ad ad);

@@ -28,6 +28,12 @@ public class Ad {
         this.category = category;
     }
 
+    public Ad(long userId, String title, String description) {
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+    }
+
     @Override
     public String toString() {
         return "Ad{" +
