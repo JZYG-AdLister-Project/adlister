@@ -47,7 +47,7 @@
                     </c:forEach>
                 </c:if>
                 
-                <%-- search by title --%>
+                <%-- Search by title --%>
                 <c:forEach var="ad" items="${ads}">
                     <div class="col-md-6">
                         <h2>${ad.title}</h2>
@@ -56,7 +56,7 @@
                     </div>
                 </c:forEach>
 
-<%--                Conditional logic saying nothing matches that search :/--%>
+                <%-- Conditional logic saying nothing matches that search :/--%>
                 <c:if test="${empty ads}">
                     <h3>Sorry! There's no Heirloom matches for that... :(</h3>
                 </c:if>

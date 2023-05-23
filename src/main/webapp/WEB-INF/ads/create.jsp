@@ -39,7 +39,7 @@
             </div>
             <input type="submit" class="btn btn-block btn-danger">
             <br>
-            <a href="http://localhost:8080/ads">Go Back</a>
+            <a class="text-success" href="http://localhost:8080/ads">Go Back</a>
         </form>
     </div>
 </body>

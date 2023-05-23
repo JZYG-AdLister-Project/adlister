@@ -44,11 +44,10 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 ">
             <c:forEach var="ad" items="${ads}">
             <div class="col">
-                <div class="card h-100">
+                <div class="card h-100 border border-success">
                     <div class="card-body">
                         <h5>${ad.title}</h5>
                         <h6>${ad.category}</h6>
-<%--                        <p class="card-text text-nowrap overflow-hidden text-truncate invisible ">${ad.description}</p>--%>
                         <a href="ads/details?id=${ad.id}" class="btn btn-danger">View Details</a>
                     </div>
                 </div>
