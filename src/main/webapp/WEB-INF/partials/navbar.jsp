@@ -37,18 +37,28 @@
             </form>
         </c:if>
 
-        <ul class="nav navbar-nav  justify-content-right">
+        <div class="nav navbar-nav  justify-content-right">
             <%-- If logged in: --%>
                 <c:if test="${!empty user }">
-                <li class="logout-tab visible "><a href="/logout">Logout</a></li>
-                <li class="profile-tab visible "><a href="/profile">View Profile</a></li>
-                <li class="update-tab visible "><a href="/account-update">Update Profile</a></li>
+                    <a class="logout-tab visible " href="/logout">
+                        <img src="/img/door-closed-fill.svg" alt="Bootstrap" width="30" height="30">
+                    </a>
+                    <a class="profile-tab visible " href="/profile">
+                        <img src="/img/person-square.svg" alt="Bootstrap" width="30" height="30">
+                    </a>
+                    <a class="update-tab visible " href="/account-update">
+                        <img src="/img/edit-profile.svg" alt="Bootstrap" width="30" height="30">
+                    </a>
             </c:if>
                 <%-- If NOT logged in: --%>
             <c:if test="${empty user}">
-                <li class="login-tab "><a href="/login">Login</a></li>
-                <li class="register-tab"><a href="/register">Register</a></li>
+                <a class="login-tab " href="/login">
+                    <img src="/img/login.svg" alt="Bootstrap" width="60" height="60">
+                </a>
+                <a class="register-tab" href="/register">
+                    <img src="/img/sign-up.svg" alt="Bootstrap" width="60" height="60">
+                </a>
             </c:if>
-        </ul>
+        </div>
     </div>
 </nav>
