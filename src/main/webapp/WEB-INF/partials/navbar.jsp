@@ -15,17 +15,17 @@
 
         <%-- If user on search page, search bar is invisibe --%>
         <c:if test="${fn:containsIgnoreCase(pageContext.request.requestURI, '/search')}">
-            <form class="d-flex input-group w-auto invisible" action="/ads/search" method="POST">
-                <input type="text" class="form-control" name="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-primary" type="submit" data-mdb-ripple-color="dark">Search</button>
+            <form class="d-flex input-group w-auto invisible badge rounded-pill" action="/ads/search" method="POST">
+                <input type="text" class="form-control border border-danger" name="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-danger" type="submit" data-mdb-ripple-color="dark">Search</button>
             </form>
         </c:if>
 
         <%-- If logged in search bar visible: --%>
         <c:if test="${!fn:containsIgnoreCase(pageContext.request.requestURI, '/search') && !empty user }">
-            <form class="d-flex input-group w-auto visible" action="/ads/search" method="POST">
-                <input type="text" class="form-control" name="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-primary" type="submit" data-mdb-ripple-color="dark">Search</button>
+            <form class="d-flex input-group w-auto visible badge rounded-pill " action="/ads/search" method="POST">
+                <input type="text" class="form-control border border-danger" name="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-danger" type="submit" data-mdb-ripple-color="dark">Search</button>
             </form>
         </c:if>
 
@@ -33,22 +33,32 @@
         <c:if test="${fn:containsIgnoreCase(pageContext.request.requestURI, '/search') && empty user }">
             <form class="d-flex input-group w-auto invisible" action="/ads/search" method="POST">
                 <input type="text" class="form-control" name="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-primary" type="submit" data-mdb-ripple-color="dark">Search</button>
+                <button class="btn btn-outline-danger" type="submit" data-mdb-ripple-color="dark">Search</button>
             </form>
         </c:if>
 
-        <ul class="nav navbar-nav  justify-content-right">
+        <div class="nav navbar-nav  justify-content-right gap-2">
             <%-- If logged in: --%>
                 <c:if test="${!empty user }">
-                <li class="logout-tab visible "><a href="/logout">Logout</a></li>
-                <li class="profile-tab visible "><a href="/profile">View Profile</a></li>
-                <li class="update-tab visible "><a href="/account-update">Update Profile</a></li>
+                    <a class="logout-tab visible " href="/logout">
+                        <img src="/img/door-closed-fill.svg" alt="Bootstrap" width="30" height="30">
+                    </a>
+                    <a class="profile-tab visible " href="/profile">
+                        <img src="/img/person-square.svg" alt="Bootstrap" width="30" height="30">
+                    </a>
+                    <a class="update-tab visible " href="/account-update">
+                        <img src="/img/edit-profile.svg" alt="Bootstrap" width="30" height="30">
+                    </a>
             </c:if>
                 <%-- If NOT logged in: --%>
             <c:if test="${empty user}">
-                <li class="login-tab "><a href="/login">Login</a></li>
-                <li class="register-tab"><a href="/register">Register</a></li>
+                <a class="login-tab " href="/login">
+                    <img src="/img/login.png" alt="Bootstrap" width="60" height="60">
+                </a>
+                <a class="register-tab" href="/register">
+                    <img src="/img/sign-up.png" alt="Bootstrap" width="60" height="60">
+                </a>
             </c:if>
-        </ul>
+        </div>
     </div>
 </nav>

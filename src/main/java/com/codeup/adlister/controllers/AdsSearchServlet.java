@@ -28,7 +28,6 @@ public class AdsSearchServlet extends HttpServlet {
         request.setAttribute("search", search);
         request.setAttribute("category", category);
         request.getRequestDispatcher("/WEB-INF/ads/search.jsp").forward(request, response);
-        System.out.println("Category: " + category);
     }
 
 }

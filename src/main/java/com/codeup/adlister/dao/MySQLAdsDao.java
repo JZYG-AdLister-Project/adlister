@@ -90,14 +90,10 @@ public class MySQLAdsDao implements Ads {
         try {
             for (String category : categories) {
                 String insertQuery = "INSERT INTO ads_categories(ad_id, category_id) VALUES (?, ?)";
-//                PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
                 PreparedStatement stmt = connection.prepareStatement(insertQuery);
                 stmt.setLong(1, addId);
                 stmt.setLong(2, Long.parseLong(category));
                 stmt.executeUpdate();
-//                ResultSet rs = stmt.getGeneratedKeys();
-//                rs.next();
-//                return rs.getLong(1);
             }
         } catch (SQLException e) {
             throw new RuntimeException("Error inserting category.",e);
@@ -107,7 +103,6 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Long insert(Ad ad) {
         try {
-            // removed category from INSERT INTO after description, and third ?
             String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());

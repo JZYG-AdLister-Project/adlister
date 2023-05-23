@@ -2,13 +2,13 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Create a new Ad" />
+        <jsp:param name="title" value="Create a new Heirloom" />
     </jsp:include>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
-        <h1>Create a new Ad</h1>
+        <h1>Post a new Heirloom</h1>
         <form action="/ads/create" method="post">
             <div class="form-group">
                 <label for="title">Title</label>
@@ -37,9 +37,9 @@
                 <br>
                 <label><input type="checkbox" name="category" value="8">Services</label>
             </div>
-            <input type="submit" class="btn btn-block btn-primary">
+            <input type="submit" class="btn btn-block btn-danger">
             <br>
-            <a href="http://localhost:8080/ads">Go Back</a>
+            <a class="text-success" href="http://localhost:8080/ads">Go Back</a>
         </form>
     </div>
 </body>

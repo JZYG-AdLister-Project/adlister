@@ -15,16 +15,16 @@
             <li>Username: <c:out value="${user.getUsername()}"/></li>
             <li>Email: <c:out value="${user.getEmail()}"/></li>
         </ul>
-        <h2>Ads you've posted:</h2>
+        <h2>Heirlooms you've posted:</h2>
             <div class="container">
                 <div class="row row-cols-4 row-cols-md-2 g-4 ad-cards">
-                            <!-- Ad CARD START -->
+                    <!-- Ad CARD START -->
                     <c:forEach var="ad" items="${ads}">
                     <div class="col ">
-                        <div class="card h-100">
+                        <div class="card h-100 border border-success">
                             <c:if test="${ad == null}">
                             <div class="card-body">
-                                <h3 class="card-title">No ads found</h3>
+                                <h3 class="card-title">No Heirlooms found</h3>
                             </div>
                             </c:if>
                             <c:if test="${ad != null}">
@@ -63,8 +63,8 @@
                                 <button type="button" id="edit-btn" class="edit z-3 position-absolute"></button>
                             </div>
                             <div class="card-body invisible z-2 position-relative">
-                                <button type="button" id="delete-btn" class="deleteAd btn btn-primary position-absolute start-0 top-100">Delete</button>
-                                <button type="button" id="done-btn" class="doneButton btn btn-primary position-absolute end-0 top-100">Done</button>
+                                <button type="button" id="delete-btn" class="deleteAd btn btn-danger position-absolute start-0 top-100">Delete</button>
+                                <button type="button" id="done-btn" class="doneButton btn btn-danger position-absolute end-0 top-100">Done</button>
                             </div>
                             <form action="/ads/delete" method="post" class="delete-form invisible">
                                 <input type="hidden" name="title" value="${ad.title}">
