@@ -3,7 +3,7 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Viewing All The Ads" />
+        <jsp:param name="title" value="Viewing All The Heirlooms" />
     </jsp:include>
 </head>
 <body>
@@ -11,27 +11,35 @@
 
 <div class="container">
 
-    <h1>Here Are all the ads!</h1>
+    <h1>Here are all the Heirlooms!</h1>
 
     <c:if test="${not empty search}">
         <h1>You are searching for <c:out value="${search}"/></h1>
     </c:if>
 
-    <form action="/ads/search" method="POST">
-        <label for="category">Filter Categories:</label>
-        <select name="category" id="category">
-            <option value="">All Categories</option>
-            <option value="furniture">Furniture</option>
-            <option value="collectables">Collectables</option>
-            <option value="toys">Toys</option>
-            <option value="jewelry">Jewelry</option>
-            <option value="souvenirs">Souvenirs</option>
-            <option value="itemsWanted">Items Wanted</option>
-            <option value="services">Services</option>
-            <option value="miscellaneous">Miscellaneous</option>
-        </select>
-        <button type="submit">Search</button>
+    <form action="/ads/search" method="POST" id="search-form">
+        <div>
+            <label for="category">Filter Categories:</label>
+            <select name="category" id="category">
+                <option value="">All</option>
+                <option value="furniture">Furniture</option>
+                <option value="collectables">Collectables</option>
+                <option value="toys">Toys</option>
+                <option value="jewelry">Jewelry</option>
+                <option value="souvenirs">Souvenirs</option>
+                <option value="items wanted">Items Wanted</option>
+                <option value="services">Services</option>
+                <option value="miscellaneous">Miscellaneous</option>
+            </select>
+        </div>
     </form>
+
+    <script>
+        document.getElementById("category").addEventListener("change", function() {
+            document.getElementById("search-form").submit();
+        });
+    </script>
+
     <div class="container text-center">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 ">
             <c:forEach var="ad" items="${ads}">

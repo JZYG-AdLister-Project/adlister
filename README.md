@@ -1,4 +1,4 @@
-# Adlister
+# Heirloom
 ## Table of Contents
 
 * [Description](#description)
@@ -21,7 +21,7 @@
 ![](src/main/webapp/img/adsDetails.png)
 
 ## Description
-AdLister is a Craigslist-inspired web application that allows users to post and view ads. Users can register, log in, create ads, search for ads, update their profile information, and delete their ads. The platform incorporates features such as dynamic navigation, error message display, sticky forms, and categorization of ads. It also ensures uniqueness of usernames and implements intended redirects for improved user experience.
+Heirloom is a Craigslist-inspired web application that allows users to post and view ads. Users can register, log in, create ads, search for ads, update their profile information, and delete their ads. The platform incorporates features such as dynamic navigation, error message display, sticky forms, and categorization of ads. It also ensures uniqueness of usernames and implements intended redirects for improved user experience.
 
 
 ## Installation
