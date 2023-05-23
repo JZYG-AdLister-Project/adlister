@@ -58,7 +58,6 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-//    @Override
     public void insertCategory(Long addId, String[] categories) {
         try {
             for (String category : categories) {
@@ -76,7 +75,6 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Long insert(Ad ad) {
         try {
-            // removed category from INSERT INTO after description, and third ?
             String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());

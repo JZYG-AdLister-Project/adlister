@@ -18,7 +18,7 @@
         <h2>Heirlooms you've posted:</h2>
             <div class="container">
                 <div class="row row-cols-4 row-cols-md-2 g-4 ad-cards">
-                            <!-- Ad CARD START -->
+                    <!-- Ad CARD START -->
                     <c:forEach var="ad" items="${ads}">
                     <div class="col ">
                         <div class="card h-100">
