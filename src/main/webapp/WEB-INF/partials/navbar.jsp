@@ -37,7 +37,7 @@
             </form>
         </c:if>
 
-        <div class="nav navbar-nav  justify-content-right">
+        <div class="nav navbar-nav  justify-content-right gap-2">
             <%-- If logged in: --%>
                 <c:if test="${!empty user }">
                     <a class="logout-tab visible " href="/logout">
