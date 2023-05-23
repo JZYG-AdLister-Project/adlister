@@ -7,7 +7,7 @@ public class Config {
     }
 
     public static String getUser(){
-        return "adlister_admin";
+        return "adlister_user";
     }
 
     public static String getPassword(){
