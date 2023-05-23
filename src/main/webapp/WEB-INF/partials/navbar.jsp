@@ -53,10 +53,10 @@
                 <%-- If NOT logged in: --%>
             <c:if test="${empty user}">
                 <a class="login-tab " href="/login">
-                    <img src="/img/login.svg" alt="Bootstrap" width="60" height="60">
+                    <img src="/img/login.png" alt="Bootstrap" width="60" height="60">
                 </a>
                 <a class="register-tab" href="/register">
-                    <img src="/img/sign-up.svg" alt="Bootstrap" width="60" height="60">
+                    <img src="/img/sign-up.png" alt="Bootstrap" width="60" height="60">
                 </a>
             </c:if>
         </div>
