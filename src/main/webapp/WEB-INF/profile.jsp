@@ -15,7 +15,7 @@
             <li>Username: <c:out value="${user.getUsername()}"/></li>
             <li>Email: <c:out value="${user.getEmail()}"/></li>
         </ul>
-        <h2>Ads you've posted:</h2>
+        <h2>Heirlooms you've posted:</h2>
             <div class="container">
                 <div class="row row-cols-4 row-cols-md-2 g-4 ad-cards">
                             <!-- Ad CARD START -->
@@ -24,7 +24,7 @@
                         <div class="card h-100">
                             <c:if test="${ad == null}">
                             <div class="card-body">
-                                <h3 class="card-title">No ads found</h3>
+                                <h3 class="card-title">No Heirlooms found</h3>
                             </div>
                             </c:if>
                             <c:if test="${ad != null}">

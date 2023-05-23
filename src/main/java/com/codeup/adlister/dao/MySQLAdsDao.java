@@ -63,15 +63,10 @@ public class MySQLAdsDao implements Ads {
         try {
             for (String category : categories) {
                 String insertQuery = "INSERT INTO ads_categories(ad_id, category_id) VALUES (?, ?)";
-//                PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
                 PreparedStatement stmt = connection.prepareStatement(insertQuery);
                 stmt.setLong(1, addId);
                 stmt.setLong(2, Long.parseLong(category));
-                System.out.println(stmt);
                 stmt.executeUpdate();
-//                ResultSet rs = stmt.getGeneratedKeys();
-//                rs.next();
-//                return rs.getLong(1);
             }
         } catch (SQLException e) {
             throw new RuntimeException("Error inserting category.",e);
