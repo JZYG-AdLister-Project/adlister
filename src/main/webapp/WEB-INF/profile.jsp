@@ -37,8 +37,24 @@
                                     <input name="title" type="text" placeholder="${ad.title}" id="editTitle" class="invisible edit-title form-control">
                                     <label for="editDescription" class="invisible form-label">Edit Description</label>
                                     <input name="description" type="text" placeholder="${ad.description}" id="editDescription" class="form-control invisible edit-description">
-                                    <label for="editCategory" class="invisible form-label">Edit Category</label>
-                                    <input name="category" type="text"  placeholder="${ad.category}" id="editCategory" class="form-control invisible edit-category">
+                                    <label class="invisible form-label">Edit Category</label>
+                                    <div class="form-group invisible">
+                                        <label><input type="checkbox" name="category" value="1">Furniture</label>
+                                        <br>
+                                        <label><input type="checkbox" name="category" value="2">Collectables</label>
+                                        <br>
+                                        <label><input type="checkbox" name="category" value="3">Toys</label>
+                                        <br>
+                                        <label><input type="checkbox" name="category" value="4">Items Wanted</label>
+                                        <br>
+                                        <label><input type="checkbox" name="category" value="5">Miscellaneous</label>
+                                        <br>
+                                        <label><input type="checkbox" name="category" value="6">Souvenirs</label>
+                                        <br>
+                                        <label><input type="checkbox" name="category" value="7">Jewelry</label>
+                                        <br>
+                                        <label><input type="checkbox" name="category" value="8">Services</label>
+                                    </div>
                                     <input type="hidden" name="id" value="${ad.id}">
                                 </form>
                                 <button type="button" id="edit-btn" class="edit z-3 position-absolute"></button>
