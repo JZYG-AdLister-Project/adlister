@@ -15,17 +15,17 @@
 
         <%-- If user on search page, search bar is invisibe --%>
         <c:if test="${fn:containsIgnoreCase(pageContext.request.requestURI, '/search')}">
-            <form class="d-flex input-group w-auto invisible" action="/ads/search" method="POST">
-                <input type="text" class="form-control" name="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-primary" type="submit" data-mdb-ripple-color="dark">Search</button>
+            <form class="d-flex input-group w-auto invisible badge rounded-pill" action="/ads/search" method="POST">
+                <input type="text" class="form-control border border-danger" name="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-danger" type="submit" data-mdb-ripple-color="dark">Search</button>
             </form>
         </c:if>
 
         <%-- If logged in search bar visible: --%>
         <c:if test="${!fn:containsIgnoreCase(pageContext.request.requestURI, '/search') && !empty user }">
-            <form class="d-flex input-group w-auto visible" action="/ads/search" method="POST">
-                <input type="text" class="form-control" name="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-primary" type="submit" data-mdb-ripple-color="dark">Search</button>
+            <form class="d-flex input-group w-auto visible badge rounded-pill " action="/ads/search" method="POST">
+                <input type="text" class="form-control border border-danger" name="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-danger" type="submit" data-mdb-ripple-color="dark">Search</button>
             </form>
         </c:if>
 
@@ -33,7 +33,7 @@
         <c:if test="${fn:containsIgnoreCase(pageContext.request.requestURI, '/search') && empty user }">
             <form class="d-flex input-group w-auto invisible" action="/ads/search" method="POST">
                 <input type="text" class="form-control" name="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-primary" type="submit" data-mdb-ripple-color="dark">Search</button>
+                <button class="btn btn-outline-danger" type="submit" data-mdb-ripple-color="dark">Search</button>
             </form>
         </c:if>
 
@@ -53,10 +53,10 @@
                 <%-- If NOT logged in: --%>
             <c:if test="${empty user}">
                 <a class="login-tab " href="/login">
-                    <img src="/img/login.svg" alt="Bootstrap" width="60" height="60">
+                    <img src="/img/login.png" alt="Bootstrap" width="60" height="60">
                 </a>
                 <a class="register-tab" href="/register">
-                    <img src="/img/sign-up.svg" alt="Bootstrap" width="60" height="60">
+                    <img src="/img/sign-up.png" alt="Bootstrap" width="60" height="60">
                 </a>
             </c:if>
         </div>

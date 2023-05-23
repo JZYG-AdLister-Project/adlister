@@ -37,7 +37,7 @@
                 <br>
                 <label><input type="checkbox" name="category" value="8">Services</label>
             </div>
-            <input type="submit" class="btn btn-block btn-primary">
+            <input type="submit" class="btn btn-block btn-danger">
             <br>
             <a href="http://localhost:8080/ads">Go Back</a>
         </form>
