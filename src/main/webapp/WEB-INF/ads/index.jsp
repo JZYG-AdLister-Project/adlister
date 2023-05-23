@@ -48,7 +48,6 @@
                     <div class="card-body">
                         <h5>${ad.title}</h5>
                         <h6>${ad.category}</h6>
-<%--                        <p class="card-text text-nowrap overflow-hidden text-truncate invisible ">${ad.description}</p>--%>
                         <a href="ads/details?id=${ad.id}" class="btn btn-danger">View Details</a>
                     </div>
                 </div>
