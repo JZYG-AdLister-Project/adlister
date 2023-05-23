@@ -30,6 +30,22 @@
                     <button class="btn btn-outline-danger" type="submit">Search</button>
                 </form>
 
+                <form action="/ads/search" method="POST" id="search-form">
+                    <div>
+                        <label for="category">Filter Categories:</label>
+                        <select name="category" id="category">
+                            <option value="">All</option>
+                            <option value="furniture">Furniture</option>
+                            <option value="collectables">Collectables</option>
+                            <option value="toys">Toys</option>
+                            <option value="jewelry">Jewelry</option>
+                            <option value="souvenirs">Souvenirs</option>
+                            <option value="items wanted">Items Wanted</option>
+                            <option value="services">Services</option>
+                            <option value="miscellaneous">Miscellaneous</option>
+                        </select>
+                    </div>
+                </form>
 
                 <script>
                     document.getElementById("category").addEventListener("change", function() {
