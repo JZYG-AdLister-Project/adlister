@@ -21,7 +21,7 @@
       <input type="email" class="form-control" id="email" name="email" value="${user.email}" required>
     </div>
 
-    <button type="submit" class="btn btn-primary">Update Account</button>
+    <button type="submit" class="btn btn-danger">Update Account</button>
   </form>
 </div>
 
