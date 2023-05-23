@@ -7,8 +7,9 @@
             <a class="navbar-brand" href="/ads">
                 <img src="/img/heirloom.png" alt="Bootstrap" width="75" height="75">
             </a>
-            <a class="navbar-brand" href="/ads/create">Post an heirloom!</a>
-
+            <c:if test="${!fn:containsIgnoreCase(pageContext.request.requestURI, '/create')}">
+                <a class="navbar-brand" href="/ads/create">Post an heirloom!</a>
+            </c:if>
 
         </div>
 

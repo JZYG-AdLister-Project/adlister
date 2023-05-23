@@ -6,6 +6,7 @@
     </jsp:include>
 </head>
 <body>
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
         <h1>Create a new Ad</h1>
         <form action="/ads/create" method="post">
@@ -20,14 +21,21 @@
             <div class="form-group">
                 <label>Please Select a Category:</label>
                 <br>
-                <label><input type="checkbox" name="category" value="Furniture">Furniture</label>
-                <label><input type="checkbox" name="category" value="Collectables">Collectables</label>
-                <label><input type="checkbox" name="category" value="Toys">Toys</label>
-                <label><input type="checkbox" name="category" value="Items wanted">Items Wanted</label>
-                <label><input type="checkbox" name="category" value="Miscellaneous">Miscellaneous</label>
-                <label><input type="checkbox" name="category" value="Souvenirs">Souvenirs</label>
-                <label><input type="checkbox" name="category" value="Jewelry">Jewelry</label>
-                <label><input type="checkbox" name="category" value="Services">Services</label>
+                <label><input type="checkbox" name="category" value="1">Furniture</label>
+                <br>
+                <label><input type="checkbox" name="category" value="2">Collectables</label>
+                <br>
+                <label><input type="checkbox" name="category" value="3">Toys</label>
+                <br>
+                <label><input type="checkbox" name="category" value="4">Items Wanted</label>
+                <br>
+                <label><input type="checkbox" name="category" value="5">Miscellaneous</label>
+                <br>
+                <label><input type="checkbox" name="category" value="6">Souvenirs</label>
+                <br>
+                <label><input type="checkbox" name="category" value="7">Jewelry</label>
+                <br>
+                <label><input type="checkbox" name="category" value="8">Services</label>
             </div>
             <input type="submit" class="btn btn-block btn-primary">
             <br>
