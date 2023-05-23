@@ -21,6 +21,8 @@ public interface Ads {
     // Search by ad
     List<Ad> searchAds(String search);
 
+    List<Ad> searchNoCategory(String search);
+
 
     // update an existing ad
     void update(Ad ad);
