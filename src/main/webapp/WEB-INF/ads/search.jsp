@@ -14,7 +14,7 @@
         <div class="row">
             <div class="column">
                 <c:if test="${empty search && empty adsCategory}">
-                    <h1>Here are all the ads!</h1>
+                    <h1>Here are all the heirlooms!</h1>
                 </c:if>
                 <c:if test="${not empty search}">
                     <h1>You are searching for "<c:out value="${search}"/>"</h1>

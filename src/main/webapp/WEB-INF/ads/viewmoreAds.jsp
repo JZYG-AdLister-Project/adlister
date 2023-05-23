@@ -2,16 +2,42 @@
 <html>
 <head>
     <title>Ad Details</title>
+
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile" />
     </jsp:include>
+
+    <style>
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            text-align: center;
+        }
+        .ad-info {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<%--<h1>Ad Details</h1>--%>
-  <h2>${ad.title}</h2>
-  <h3 class="fs-4">${ad.category}</h3>
-  <h4 class="fs-6">${ad.description}</h4>
-  <p class="fs-6">posted by: ${user.username}</p>
+
+<div class="container center-content">
+    <div class="ad-info">
+        <h4 class="fw-bold">Title:</h4>
+        <h2>${ad.title}</h2>
+    </div>
+    <div class="ad-info">
+        <h4 class="fw-bold">Description:</h4>
+        <h3 class="fs-4">${ad.description}</h3>
+    </div>
+    <div class="ad-info">
+        <h4 class="fw-bold">Posted by:</h4>
+        <p class="fs-6">${user.username}</p>
+    </div>
+</div>
+
 </body>
 </html>

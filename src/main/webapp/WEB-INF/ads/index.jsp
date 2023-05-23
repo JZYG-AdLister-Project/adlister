@@ -11,7 +11,7 @@
 
 <div class="container">
 
-    <h1>Here Are all the ads!</h1>
+    <h1>Here Are all the heirlooms!</h1>
 
     <c:if test="${not empty search}">
         <h1>You are searching for <c:out value="${search}"/></h1>
