@@ -67,6 +67,7 @@ public class MySQLAdsDao implements Ads {
                 PreparedStatement stmt = connection.prepareStatement(insertQuery);
                 stmt.setLong(1, addId);
                 stmt.setLong(2, Long.parseLong(category));
+                System.out.println(stmt);
                 stmt.executeUpdate();
 //                ResultSet rs = stmt.getGeneratedKeys();
 //                rs.next();
@@ -133,6 +134,22 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
+    public List<Ad> searchNoCategory(String search) {
+        try {
+            String insertQuery = "SELECT ads.id, ads.user_id, ads.title, ads.description\n" +
+                    "FROM ads\n" +
+                    "WHERE title LIKE ?" +
+                    "GROUP BY ads.id";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, "%" + search + "%");
+            ResultSet resultSet = stmt.executeQuery();
+            return createAdsFromResultsNoCategory(resultSet);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error searching for ad(s).", e);
+        }
+    }
+
+    @Override
 
     public void update(Ad ad) {
         try {
@@ -172,6 +189,15 @@ public class MySQLAdsDao implements Ads {
         );
     }
 
+    private Ad extractAdNoCategory(ResultSet rs) throws SQLException {
+        return new Ad(
+                rs.getLong("id"),
+                rs.getLong("user_id"),
+                rs.getString("title"),
+                rs.getString("description")
+        );
+    }
+
     private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
         List<Ad> ads = new ArrayList<>();
         while (rs.next()) {
@@ -180,6 +206,13 @@ public class MySQLAdsDao implements Ads {
         return ads;
     }
 
+    private List<Ad> createAdsFromResultsNoCategory(ResultSet rs) throws SQLException {
+        List<Ad> ads = new ArrayList<>();
+        while (rs.next()) {
+            ads.add(extractAdNoCategory(rs));
+        }
+        return ads;
+    }
     public Ad findById(long id) {
        PreparedStatement stmt = null;
        try {
