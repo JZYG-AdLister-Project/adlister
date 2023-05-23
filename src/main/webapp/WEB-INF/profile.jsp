@@ -44,8 +44,8 @@
                                 <button type="button" id="edit-btn" class="edit z-3 position-absolute"></button>
                             </div>
                             <div class="card-body invisible z-2 position-relative">
-                                <button type="button" id="delete-btn" class="deleteAd btn btn-primary position-absolute start-0 top-100">Delete</button>
-                                <button type="button" id="done-btn" class="doneButton btn btn-primary position-absolute end-0 top-100">Done</button>
+                                <button type="button" id="delete-btn" class="deleteAd btn btn-danger position-absolute start-0 top-100">Delete</button>
+                                <button type="button" id="done-btn" class="doneButton btn btn-danger position-absolute end-0 top-100">Done</button>
                             </div>
                             <form action="/ads/delete" method="post" class="delete-form invisible">
                                 <input type="hidden" name="title" value="${ad.title}">
