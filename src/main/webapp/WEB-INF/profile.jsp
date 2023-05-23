@@ -21,7 +21,7 @@
                             <!-- Ad CARD START -->
                     <c:forEach var="ad" items="${ads}">
                     <div class="col ">
-                        <div class="card h-100">
+                        <div class="card h-100 border border-success">
                             <c:if test="${ad == null}">
                             <div class="card-body">
                                 <h3 class="card-title">No Heirlooms found</h3>
