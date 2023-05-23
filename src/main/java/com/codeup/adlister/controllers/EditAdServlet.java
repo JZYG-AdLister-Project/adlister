@@ -37,7 +37,7 @@ public class EditAdServlet extends HttpServlet {
 			title,
 			description
 		);
-
+		adsDao.update(ad);
 		List<Ad> ad2 = adsDao.searchNoCategory(req.getParameter("title"));
 		Ad ad3 = ad2.get(0);
 
@@ -45,8 +45,6 @@ public class EditAdServlet extends HttpServlet {
 			adsDao.removeCategory(ad3.getId());
 			adsDao.insertCategory(ad3.getId(), selectedCategories);
 		}
-
-		adsDao.update(ad);
 
 		resp.sendRedirect("/profile");
 	}
