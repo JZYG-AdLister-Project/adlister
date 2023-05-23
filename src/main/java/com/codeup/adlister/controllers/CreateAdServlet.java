@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
@@ -37,7 +38,9 @@ public class CreateAdServlet extends HttpServlet {
             request.getParameter("description")
         );
         DaoFactory.getAdsDao().insert(ad);
+        List<Ad> ad2 = DaoFactory.getAdsDao().searchNoCategory(request.getParameter("title"));
+        Ad ad3 = ad2.get(0);
+        DaoFactory.getAdsDao().insertCategory(ad3.getId(), selectedCategories);
         response.sendRedirect("/ads");
-        System.out.println("Category: " + Arrays.toString(request.getParameterValues("category")));
     }
 }
