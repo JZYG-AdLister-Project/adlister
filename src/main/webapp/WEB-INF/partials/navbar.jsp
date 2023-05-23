@@ -37,7 +37,8 @@
             </form>
         </c:if>
 
-        <div class="nav navbar-nav  justify-content-right gap-2">
+        <div class="nav navbar-nav gap-2">
+            <div class="container-fluid">
             <%-- If logged in: --%>
                 <c:if test="${!empty user }">
                     <a class="logout-tab visible " href="/logout">
@@ -49,16 +50,17 @@
                     <a class="update-tab visible " href="/account-update">
                         <img src="/img/edit-profile.svg" alt="Bootstrap" width="30" height="30">
                     </a>
-            </c:if>
-                <%-- If NOT logged in: --%>
-            <c:if test="${empty user}">
-                <a class="login-tab " href="/login">
-                    <img src="/img/login.png" alt="Bootstrap" width="60" height="60">
-                </a>
-                <a class="register-tab" href="/register">
-                    <img src="/img/sign-up.png" alt="Bootstrap" width="60" height="60">
-                </a>
-            </c:if>
+                </c:if>
+                    <%-- If NOT logged in: --%>
+                <c:if test="${empty user}">
+                    <a class="login-tab " href="/login">
+                        <img src="/img/login.png" alt="Bootstrap" width="60" height="60">
+                    </a>
+                    <a class="register-tab" href="/register">
+                        <img src="/img/sign-up.png" alt="Bootstrap" width="60" height="60">
+                    </a>
+                </c:if>
+            </div>
         </div>
     </div>
 </nav>
