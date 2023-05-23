@@ -58,6 +58,34 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public void removeCategory(Long adId) {
+        try {
+            String deleteQuery = "DELETE FROM ads_categories WHERE ad_id = ?";
+            PreparedStatement stmt = connection.prepareStatement(deleteQuery);
+            stmt.setLong(1, adId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting category.",e);
+        }
+    }
+
+    @Override
+    public void selectExistingCats(Long adId) {
+        try {
+            String insertQuery = "SELECT GROUP_CONCAT(category_id SEPARATOR ', ') AS category\n" +
+                    "FROM ads_categories\n" +
+                    "WHERE ad_id = ?\n" +
+                    "GROUP BY ad_id;";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery);
+            stmt.setLong(1, adId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error inserting category.",e);
+        }
+    }
+
+    @Override
     public void insertCategory(Long addId, String[] categories) {
         try {
             for (String category : categories) {
@@ -143,7 +171,6 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-
     public void update(Ad ad) {
         try {
             String updateQuery = "UPDATE ads SET title = ?, description = ? WHERE user_id = ? AND id = ? LIMIT 1";
