@@ -39,7 +39,7 @@
         <ul class="nav navbar-nav  justify-content-right">
             <%-- If logged in: --%>
                 <c:if test="${!empty user }">
-                <li class="logout-tab visible "><a href="/log out">Logout</a></li>
+                <li class="logout-tab visible "><a href="/logout">Logout</a></li>
                 <li class="profile-tab visible "><a href="/profile">View Profile</a></li>
                 <li class="update-tab visible "><a href="/account-update">Update Profile</a></li>
             </c:if>
